@@ -75,7 +75,7 @@ export default function EmailSignupForm({
   }
 
   const formClasses = variant === 'inline' 
-    ? 'flex flex-col sm:flex-row gap-3 max-w-md'
+    ? 'flex flex-col sm:flex-row gap-3 max-w-lg w-full'
     : 'space-y-4 max-w-md mx-auto';
 
   const inputClasses = `w-full px-4 py-3 text-base bg-gray-900 border border-gray-700 rounded
