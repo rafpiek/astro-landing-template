@@ -36,11 +36,11 @@ This is an Astro-based landing page for Zeyn (a writing application) using React
 - Tailwind CSS configured to scan all Astro, JS, JSX, and TS files
 - Global styles in src/styles/global.css
 - Component-level styles use Tailwind classes or Astro scoped styles
-- **Design System:** Follow STYLE_GUIDE.md for colors, typography, and visual patterns
+- **Design System:** Follow docs/styleguide.md for colors, typography, and visual patterns
 
 ## Design Guidelines
 
-**Style Guide:** `STYLE_GUIDE.md` contains comprehensive design system with:
+**Style Guide:** `docs/styleguide.md` contains comprehensive design system with:
 - Color tokens for light/dark modes matching Zeyn app
 - Typography scale and font hierarchy
 - Component patterns and spacing system
@@ -56,6 +56,7 @@ This is an Astro-based landing page for Zeyn (a writing application) using React
 ## KEY RULES
 
 - never run dev server on your own, never run `bun run dev` or `bun dev`
+- always create documentation and plan files in the `docs/` directory
 
 ## TESTING
 
