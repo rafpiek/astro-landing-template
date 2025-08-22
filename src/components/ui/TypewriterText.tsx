@@ -49,8 +49,8 @@ export default function TypewriterText({
   const longestWord = words.reduce((a, b) => a.length > b.length ? a : b);
   
   return (
-    <span className={`inline-block relative ${className}`} style={{ minWidth: `${longestWord.length}ch` }}>
-      <span>{currentText}</span>
+    <span className={`inline-block ${className}`} style={{ minWidth: `${longestWord.length + 1}ch` }}>
+      {currentText}
       <span className="animate-pulse">|</span>
     </span>
   );

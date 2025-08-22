@@ -55,8 +55,8 @@ export default function CountdownTimer({
   const sizeClasses = {
     sm: {
       container: 'text-sm',
-      number: 'text-lg font-semibold',
-      label: 'text-xs'
+      number: 'text-base font-bold',
+      label: 'text-[10px]'
     },
     md: {
       container: 'text-base',
@@ -91,26 +91,21 @@ export default function CountdownTimer({
   ];
 
   return (
-    <div className={`inline-flex gap-2 sm:gap-4 ${sizeClasses[size].container} ${className}`}>
+    <div className={`inline-flex gap-1 ${sizeClasses[size].container} ${className}`}>
       {timeUnits.map((unit, index) => (
-        <div key={unit.label} className="text-center">
-          <div className={`
-            ${sizeClasses[size].number} 
-            text-light-text-primary dark:text-dark-text-primary
-            leading-none
-          `}>
-            {String(unit.value).padStart(2, '0')}
+        <React.Fragment key={unit.label}>
+          {index > 0 && <span className="text-gray-500">:</span>}
+          <div className="text-center">
+            <span className={`${sizeClasses[size].number} tabular-nums`}>
+              {String(unit.value).padStart(2, '0')}
+            </span>
+            {showLabels && (
+              <span className={`${sizeClasses[size].label} text-gray-500 ml-1`}>
+                {unit.shortLabel}
+              </span>
+            )}
           </div>
-          {showLabels && (
-            <div className={`
-              ${sizeClasses[size].label} 
-              text-light-text-secondary dark:text-dark-text-secondary
-              uppercase tracking-wide
-            `}>
-              {size === 'sm' ? unit.shortLabel : unit.label}
-            </div>
-          )}
-        </div>
+        </React.Fragment>
       ))}
     </div>
   );

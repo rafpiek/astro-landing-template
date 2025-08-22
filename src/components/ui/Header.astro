@@ -3,45 +3,34 @@ import Container from './Container.astro';
 import ThemeToggle from './ThemeToggle.tsx';
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800">
+<header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md">
   <Container>
-    <div class="flex items-center justify-between py-4">
+    <div class="flex items-center justify-between h-16">
       
       <!-- Logo/Brand -->
-      <div class="flex items-center">
-        <a href="/" class="flex items-center group">
-          <!-- Zeyn Logo -->
-          <div class="w-8 h-8 bg-primary-blue rounded-lg flex items-center justify-center mr-3 group-hover:scale-105 transition-transform duration-200">
-            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd"/>
-            </svg>
-          </div>
-          <span class="text-lg font-bold text-black dark:text-white group-hover:text-gray-600 transition-colors duration-200">
-            Zeyn
-          </span>
-        </a>
-      </div>
+      <a href="/" class="flex items-center group">
+        <span class="text-xl font-bold text-white group-hover:text-gray-300 transition-colors duration-200">
+          Zeyn
+        </span>
+      </a>
 
-      <!-- Navigation & Theme Toggle -->
-      <div class="flex items-center space-x-4">
+      <!-- Navigation & CTA -->
+      <div class="flex items-center gap-8">
         
-        <!-- Quick Navigation (optional) -->
-        <nav class="hidden md:flex items-center space-x-6">
-          <a href="#features" class="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200">
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#features" class="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-200">
             Features
           </a>
-          <a href="#faq" class="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200">
+          <a href="#faq" class="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-200">
             FAQ
           </a>
         </nav>
 
-        <!-- Theme Toggle -->
-        <ThemeToggle client:load />
-
         <!-- CTA Button -->
         <a 
           href="#hero" 
-          class="hidden sm:inline-flex btn-base bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-100 px-4 py-2 text-sm font-medium transition-colors duration-200 rounded"
+          class="inline-flex items-center px-4 py-2 bg-white text-black hover:bg-gray-100 text-sm font-medium transition-colors duration-200 rounded-lg"
         >
           Get Early Access
         </a>

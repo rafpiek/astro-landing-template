@@ -37,7 +37,7 @@ export default function ThemeToggle() {
   // Don't render until mounted to avoid hydration mismatch
   if (!mounted) {
     return (
-      <div className="w-10 h-10 rounded-lg bg-light-bg-hover dark:bg-dark-bg-hover animate-pulse" />
+      <div className="w-8 h-8 rounded-md bg-gray-800/30 animate-pulse" />
     );
   }
 
@@ -45,13 +45,11 @@ export default function ThemeToggle() {
     <button
       onClick={toggleTheme}
       className="
-        relative w-10 h-10 rounded-lg
-        bg-light-bg-hover dark:bg-dark-bg-hover
-        border border-light-border-light dark:border-dark-border-light
-        hover:bg-light-bg-card dark:hover:bg-dark-bg-card
+        relative w-8 h-8 rounded-md
+        text-gray-400 hover:text-white
+        hover:bg-gray-800/50
         transition-all duration-200 ease-out
-        focus:outline-none focus:ring-2 focus:ring-primary-blue focus:ring-offset-2
-        focus:ring-offset-light-bg-primary dark:focus:ring-offset-dark-bg-primary
+        focus:outline-none focus:ring-2 focus:ring-gray-500
         group
       "
       aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
@@ -60,7 +58,7 @@ export default function ThemeToggle() {
       {/* Sun icon - visible in dark mode */}
       <svg
         className={`
-          absolute inset-2 w-6 h-6 text-yellow-500
+          absolute inset-1 w-6 h-6
           transition-all duration-300 ease-out
           ${theme === 'dark' 
             ? 'opacity-100 rotate-0 scale-100' 
@@ -82,7 +80,7 @@ export default function ThemeToggle() {
       {/* Moon icon - visible in light mode */}
       <svg
         className={`
-          absolute inset-2 w-6 h-6 text-slate-700 dark:text-slate-300
+          absolute inset-1 w-6 h-6
           transition-all duration-300 ease-out
           ${theme === 'light' 
             ? 'opacity-100 rotate-0 scale-100' 
@@ -101,8 +99,6 @@ export default function ThemeToggle() {
         />
       </svg>
 
-      {/* Hover effect indicator */}
-      <div className="absolute inset-0 rounded-lg bg-primary-blue opacity-0 group-hover:opacity-10 transition-opacity duration-200" />
     </button>
   );
 }

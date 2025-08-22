@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import Container from '../ui/Container.astro';
 import EmailSignupForm from '../ui/EmailSignupForm.tsx';
 import TypewriterText from '../ui/TypewriterText.tsx';
+import CountdownTimer from '../ui/CountdownTimer.tsx';
 
 // Import hero images for optimization
 import zenModeDark from '../../assets/screenshots/dark-mode/dark-10-zen-mode.png';
@@ -14,53 +15,129 @@ import editorDark from '../../assets/screenshots/dark-mode/dark-08-document-edit
 
 <section id="hero" class="relative min-h-screen bg-black overflow-hidden">
   
+  <!-- Animated gradient background -->
+  <div class="absolute inset-0 opacity-30">
+    <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+    <div class="absolute top-0 -right-4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+    <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+  </div>
+  
   <Container class="relative">
-    <div class="min-h-screen flex items-center">
+    <div class="flex items-start pt-32 pb-12">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
         
         <!-- Left Column: Copy and CTA -->
         <div class="text-center lg:text-left">
           
-          <!-- Main Headline with Typewriter -->
-          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-medium text-white leading-[1.1] mb-8">
-            <span class="block">The writing app</span>
-            <span class="block">built for <TypewriterText 
-              client:load
-              words={["novelists", "writers", "storytellers", "authors"]}
-              className="text-gray-400"
-              speed={150}
-              deleteSpeed={100}
-              delayBetween={2000}
-            /></span>
-          </h1>
-
-          <!-- Subheadline -->
-          <p class="text-xl text-gray-400 mb-12 max-w-xl mx-auto lg:mx-0">
-            Distraction-free writing. Chapter organization. Progress tracking.
-            Everything you need to finish your book.
-          </p>
-
-          <!-- CTA -->
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
-            <EmailSignupForm 
-              client:load
-              placeholder="Enter your email"
-              buttonText="Get early access"
-              variant="inline"
-              className=""
-            />
-            <p class="text-sm text-gray-500">Free during launch week</p>
+          <!-- Badge with Countdown -->
+          <div class="mb-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 mb-2 bg-gray-900 border border-gray-800 rounded-full">
+              <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+              <span class="text-sm font-medium text-white">
+                Early Bird Access - Limited Spots
+              </span>
+            </div>
+            <div class="flex items-center gap-3 text-xs text-gray-500">
+              <span>Registration closes in:</span>
+              <CountdownTimer 
+                client:load
+                targetDate={new Date(Date.now() + 2 * 24 * 60 * 60 * 1000)}
+                size="sm"
+                className="text-white"
+              />
+            </div>
           </div>
 
-          <!-- Trust indicators -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-gray-500">
-            <div class="flex items-center">
-              <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-              <span>1000+ writers joined</span>
+          <!-- Main Headline with Typewriter -->
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-4">
+            <span class="block">Finally finish your</span>
+            <span class="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+              <TypewriterText 
+                client:load
+                words={["novel", "memoir", "masterpiece", "bestseller"]}
+                className=""
+                speed={150}
+                deleteSpeed={100}
+                delayBetween={2000}
+              />
+            </span>
+          </h1>
+
+          <!-- Subheadline with specific benefits -->
+          <p class="text-xl text-gray-300 mb-4 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            <span class="font-semibold text-white">Join 1,247 writers</span> who stopped starting over.
+            Write 3x faster with AI-powered focus mode, smart chapter management, 
+            and motivation that actually works.
+          </p>
+
+          <!-- Social Proof Stats -->
+          <div class="grid grid-cols-3 gap-4 mb-4 max-w-md mx-auto lg:mx-0">
+            <div class="group text-center lg:text-left transition-all duration-300 hover:transform hover:scale-105">
+              <div class="text-2xl font-bold text-white">2.3M+</div>
+              <div class="text-xs text-gray-500">words written</div>
             </div>
-            <div class="flex items-center">
-              <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-              <span>Launch in 2 weeks</span>
+            <div class="group text-center lg:text-left transition-all duration-300 hover:transform hover:scale-105">
+              <div class="text-2xl font-bold text-white">92%</div>
+              <div class="text-xs text-gray-500">finish rate</div>
+            </div>
+            <div class="group text-center lg:text-left transition-all duration-300 hover:transform hover:scale-105">
+              <div class="text-2xl font-bold text-white">4.9★</div>
+              <div class="text-xs text-gray-500">writer rating</div>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="relative mb-4 mt-2">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+              <div class="relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg blur opacity-25 animate-pulse"></div>
+                <div class="relative">
+                  <EmailSignupForm 
+                    client:load
+                    placeholder="Enter your email"
+                    buttonText="Join early access →"
+                    variant="inline"
+                    className=""
+                  />
+                </div>
+              </div>
+              <div class="flex flex-col items-start">
+                <p class="text-sm font-semibold text-white">Lifetime deal for early birds</p>
+                <p class="text-xs text-gray-500">Be first to get exclusive offer</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trust indicators with writer testimonials -->
+          <div class="flex flex-col items-center lg:items-start gap-4">
+            <div class="flex items-center gap-4">
+              <div class="flex -space-x-2">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 border-2 border-black flex items-center justify-center">
+                  <span class="text-xs font-bold text-white">JK</span>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 border-2 border-black flex items-center justify-center">
+                  <span class="text-xs font-bold text-white">MS</span>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-emerald-400 border-2 border-black flex items-center justify-center">
+                  <span class="text-xs font-bold text-white">RT</span>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-orange-400 to-red-400 border-2 border-black flex items-center justify-center">
+                  <span class="text-xs font-bold text-white">AH</span>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-gray-800 border-2 border-black flex items-center justify-center">
+                  <span class="text-xs text-white font-bold">+1K</span>
+                </div>
+              </div>
+              <div class="text-sm">
+                <span class="text-white font-medium">1,247 writers</span>
+                <span class="text-gray-500"> already writing their masterpiece</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded-full text-gray-400">📚 Fantasy & Sci-Fi</span>
+              <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded-full text-gray-400">💕 Romance</span>
+              <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded-full text-gray-400">🔍 Mystery & Thriller</span>
+              <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded-full text-gray-400">📖 Literary Fiction</span>
             </div>
           </div>
 
@@ -69,79 +146,102 @@ import editorDark from '../../assets/screenshots/dark-mode/dark-08-document-edit
         <!-- Right Column: Screenshots Showcase -->
         <div class="relative lg:h-[600px]">
           
-          <!-- Main Screenshot - Zen Mode -->
-          <div class="absolute top-0 right-0 w-[70%] z-10">
-            <div class="relative overflow-hidden rounded-lg border border-gray-800 shadow-2xl">
-              <Image
-                src={zenModeDark}
-                alt="Zeyn zen mode - distraction-free writing"
-                class="w-full h-auto"
-                widths={[400, 600, 800]}
-                sizes="(max-width: 768px) 400px, 600px"
-                loading="eager"
-                decoding="async"
-                fetchpriority="high"
-              />
+          <!-- Main Screenshot - Zen Mode with floating animation -->
+          <div class="absolute top-0 right-0 w-[70%] z-10 animate-float">
+            <div class="relative group">
+              <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+              <div class="relative overflow-hidden rounded-lg border border-gray-800 shadow-2xl transform transition-all duration-500 group-hover:scale-[1.02]">
+                <div class="absolute top-2 left-2 z-10 bg-black/50 backdrop-blur-sm px-2 py-1 rounded text-xs text-white/80">
+                  ✨ Focus Mode
+                </div>
+                <Image
+                  src={zenModeDark}
+                  alt="Zeyn zen mode - distraction-free writing"
+                  class="w-full h-auto"
+                  widths={[400, 600, 800]}
+                  sizes="(max-width: 768px) 400px, 600px"
+                  loading="eager"
+                  decoding="async"
+                  fetchpriority="high"
+                />
+              </div>
             </div>
           </div>
 
-          <!-- Secondary Screenshot - Chapters -->
-          <div class="absolute top-16 left-0 w-[60%] z-20 transform rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
-            <div class="relative overflow-hidden rounded-lg border border-gray-800 shadow-xl">
-              <Image
-                src={chaptersDark}
-                alt="Zeyn chapter organization"
-                class="w-full h-auto"
-                widths={[300, 450, 600]}
-                sizes="(max-width: 768px) 300px, 450px"
-                loading="eager"
-                decoding="async"
-              />
+          <!-- Secondary Screenshot - Chapters with parallax -->
+          <div class="absolute top-16 left-0 w-[60%] z-20 animate-float-delayed">
+            <div class="relative group transform rotate-[-2deg] hover:rotate-0 transition-all duration-500">
+              <div class="absolute -inset-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+              <div class="relative overflow-hidden rounded-lg border border-gray-800 shadow-xl transform transition-all duration-500 group-hover:scale-[1.02]">
+                <div class="absolute top-2 left-2 z-10 bg-black/50 backdrop-blur-sm px-2 py-1 rounded text-xs text-white/80">
+                  📚 Smart Chapters
+                </div>
+                <Image
+                  src={chaptersDark}
+                  alt="Zeyn chapter organization"
+                  class="w-full h-auto"
+                  widths={[300, 450, 600]}
+                  sizes="(max-width: 768px) 300px, 450px"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
             </div>
           </div>
 
-          <!-- Floating Screenshot - Stats -->
-          <div class="absolute bottom-20 right-8 w-[45%] z-15 transform rotate-[3deg] hover:rotate-0 transition-transform duration-500">
-            <div class="relative overflow-hidden rounded-lg border border-gray-800 shadow-lg">
-              <Image
-                src={statsDark}
-                alt="Zeyn progress tracking"
-                class="w-full h-auto"
-                widths={[250, 350, 450]}
-                sizes="(max-width: 768px) 250px, 350px"
-                loading="lazy"
-                decoding="async"
-              />
+          <!-- Floating Screenshot - Stats with bounce -->
+          <div class="absolute bottom-20 right-8 w-[45%] z-15 animate-bounce-slow">
+            <div class="relative group transform rotate-[3deg] hover:rotate-0 transition-all duration-500">
+              <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+              <div class="relative overflow-hidden rounded-lg border border-gray-800 shadow-lg transform transition-all duration-500 group-hover:scale-[1.02]">
+                <div class="absolute top-2 left-2 z-10 bg-black/50 backdrop-blur-sm px-2 py-1 rounded text-xs text-white/80">
+                  📊 Track Progress
+                </div>
+                <Image
+                  src={statsDark}
+                  alt="Zeyn progress tracking"
+                  class="w-full h-auto"
+                  widths={[250, 350, 450]}
+                  sizes="(max-width: 768px) 250px, 350px"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
           </div>
 
           <!-- Floating Screenshot - Dashboard -->
-          <div class="absolute bottom-0 left-12 w-[50%] z-5 transform rotate-[-1deg] hover:rotate-0 transition-transform duration-500">
-            <div class="relative overflow-hidden rounded-lg border border-gray-800 shadow-lg opacity-90">
-              <Image
-                src={homeDark}
-                alt="Zeyn home dashboard"
-                class="w-full h-auto"
-                widths={[250, 350, 450]}
-                sizes="(max-width: 768px) 250px, 350px"
-                loading="lazy"
-                decoding="async"
-              />
+          <div class="absolute bottom-0 left-12 w-[50%] z-5 animate-float-delayed-2">
+            <div class="relative group transform rotate-[-1deg] hover:rotate-0 transition-all duration-500">
+              <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+              <div class="relative overflow-hidden rounded-lg border border-gray-800 shadow-lg opacity-90 transform transition-all duration-500 group-hover:scale-[1.02] group-hover:opacity-100">
+                <Image
+                  src={homeDark}
+                  alt="Zeyn home dashboard"
+                  class="w-full h-auto"
+                  widths={[250, 350, 450]}
+                  sizes="(max-width: 768px) 250px, 350px"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
           </div>
 
-          <!-- Accent Screenshot - Editor (barely visible in background) -->
-          <div class="absolute top-32 right-16 w-[40%] z-1 transform rotate-[1deg] opacity-60">
-            <div class="relative overflow-hidden rounded-lg border border-gray-700 shadow-sm">
-              <Image
-                src={editorDark}
-                alt="Zeyn document editor"
-                class="w-full h-auto"
-                widths={[200, 300, 400]}
-                sizes="(max-width: 768px) 200px, 300px"
-                loading="lazy"
-                decoding="async"
-              />
+          <!-- Accent Screenshot - Editor (subtle background) -->
+          <div class="absolute top-32 right-16 w-[40%] z-1 animate-pulse-slow">
+            <div class="relative transform rotate-[1deg] opacity-40 hover:opacity-60 transition-all duration-500">
+              <div class="relative overflow-hidden rounded-lg border border-gray-700 shadow-sm">
+                <Image
+                  src={editorDark}
+                  alt="Zeyn document editor"
+                  class="w-full h-auto"
+                  widths={[200, 300, 400]}
+                  sizes="(max-width: 768px) 200px, 300px"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
           </div>
 
@@ -152,9 +252,102 @@ import editorDark from '../../assets/screenshots/dark-mode/dark-08-document-edit
     
   </Container>
 
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-16 left-1/2 -translate-x-1/2">
+    <a href="#features" class="group flex flex-col items-center gap-2 hover:opacity-75 transition-opacity duration-200">
+      <span class="text-sm text-gray-500 font-medium whitespace-nowrap">Continue reading</span>
+      <svg class="w-5 h-5 text-gray-400 group-hover:animate-none animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+      </svg>
+    </a>
+  </div>
+
 </section>
 
 <style>
+  /* Blob animation for gradient background */
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+  
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  
+  /* Floating animation for screenshots */
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  
+  .animate-float-delayed-2 {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+  
+  /* Slow bounce animation */
+  @keyframes bounce-slow {
+    0%, 100% {
+      transform: translateY(0px) rotate(3deg);
+    }
+    50% {
+      transform: translateY(-5px) rotate(3deg);
+    }
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce-slow 4s ease-in-out infinite;
+  }
+  
+  /* Slow pulse animation */
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+  
   /* Subtle animations for screenshot hover effects */
   @media (prefers-reduced-motion: no-preference) {
     [class*="transform"]:hover {
@@ -177,6 +370,7 @@ import editorDark from '../../assets/screenshots/dark-mode/dark-08-document-edit
       width: 100% !important;
       transform: none !important;
       margin-bottom: 1rem;
+      animation: none !important;
     }
   }
 </style>
