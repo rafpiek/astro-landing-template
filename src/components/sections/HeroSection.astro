@@ -1,0 +1,188 @@
+---
+import { Image } from 'astro:assets';
+import Container from '../ui/Container.astro';
+import Badge from '../ui/Badge.astro';
+import EmailSignupForm from '../ui/EmailSignupForm.tsx';
+import CountdownTimer from '../ui/CountdownTimer.tsx';
+
+// Import hero images for optimization
+import zenModeLight from '../../assets/screenshots/light-mode/10-zen-mode.png';
+import zenModeDark from '../../assets/screenshots/dark-mode/dark-10-zen-mode.png';
+
+// Calculate launch date (14 days from now for demo)
+const launchDate = new Date();
+launchDate.setDate(launchDate.getDate() + 14);
+---
+
+<section class="relative bg-light-bg-primary dark:bg-dark-bg-primary overflow-hidden">
+  <!-- Background gradient for visual appeal -->
+  <div class="absolute inset-0 bg-gradient-to-br from-primary-blue-light/20 to-transparent dark:from-primary-blue/10"></div>
+  
+  <Container class="relative">
+    <div class="pt-16 pb-20 lg:pt-20 lg:pb-28">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Column: Copy and CTA -->
+        <div class="text-center lg:text-left">
+          
+          <!-- Launch Badge -->
+          <div class="flex justify-center lg:justify-start mb-6">
+            <Badge variant="warning" size="md" class="animate-pulse">
+              ⏰ Launching in 14 days | ✨ 70% off for early writers
+            </Badge>
+          </div>
+
+          <!-- Main Headline - Critical for above-the-fold -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-light-text-primary dark:text-dark-text-primary leading-tight mb-6">
+            Your novel deserves 
+            <span class="text-primary-blue">better than Word</span>
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="text-lg sm:text-xl text-light-text-secondary dark:text-dark-text-secondary mb-8 max-w-2xl mx-auto lg:mx-0">
+            The only writing app built for novelists who want to finish their book—not fight their editor. 
+            Join 1000+ writers who switched for good.
+          </p>
+
+          <!-- Emotional Hook -->
+          <p class="text-base sm:text-lg font-medium text-light-text-primary dark:text-dark-text-primary mb-8 max-w-xl mx-auto lg:mx-0">
+            Stop losing your flow. Start finishing chapters.
+          </p>
+
+          <!-- Email Signup Form - Critical for conversion -->
+          <div class="mb-8">
+            <EmailSignupForm 
+              client:load
+              placeholder="Enter your email for early access"
+              buttonText="Get Early Access + Lifetime Deal"
+              variant="default"
+              className="max-w-md mx-auto lg:mx-0"
+            />
+          </div>
+
+          <!-- Countdown Timer -->
+          <div class="flex justify-center lg:justify-start">
+            <div class="text-center">
+              <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary mb-2">
+                Your novel can't wait:
+              </p>
+              <CountdownTimer 
+                client:load
+                targetDate={launchDate}
+                size="md"
+                showLabels={true}
+                className="inline-flex"
+              />
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Hero Screenshot -->
+        <div class="relative">
+          
+          <!-- Main Screenshot Container -->
+          <div class="screenshot-container relative mx-auto max-w-2xl">
+            
+            <!-- Light mode screenshot (default) -->
+            <Image
+              src={zenModeLight}
+              alt="Zeyn writing app zen mode - distraction-free novel writing interface"
+              class="w-full h-auto rounded-lg dark:hidden"
+              widths={[400, 600, 800, 1000]}
+              sizes="(max-width: 640px) 400px, (max-width: 1024px) 600px, 800px"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
+
+            <!-- Dark mode screenshot -->
+            <Image
+              src={zenModeDark}
+              alt="Zeyn writing app zen mode - distraction-free novel writing interface in dark mode"
+              class="w-full h-auto rounded-lg hidden dark:block"
+              widths={[400, 600, 800, 1000]}
+              sizes="(max-width: 640px) 400px, (max-width: 1024px) 600px, 800px"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
+
+            <!-- Floating elements for visual interest -->
+            <div class="absolute -top-4 -right-4 w-24 h-24 bg-primary-blue/10 rounded-full blur-xl animate-pulse"></div>
+            <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-success-green/10 rounded-full blur-xl animate-pulse delay-1000"></div>
+          </div>
+
+          <!-- Feature callouts around screenshot -->
+          <div class="hidden lg:block">
+            <!-- Zen Mode Callout -->
+            <div class="absolute top-8 -left-8 bg-light-bg-card dark:bg-dark-bg-card border border-light-border-light dark:border-dark-border-light rounded-lg p-3 shadow-light dark:shadow-dark max-w-xs">
+              <div class="flex items-center">
+                <div class="w-3 h-3 bg-success-green rounded-full mr-2"></div>
+                <p class="text-sm font-medium text-light-text-primary dark:text-dark-text-primary">
+                  Pure focus mode
+                </p>
+              </div>
+              <p class="text-xs text-light-text-secondary dark:text-dark-text-secondary mt-1">
+                Zero distractions, maximum flow
+              </p>
+            </div>
+
+            <!-- Speed Callout -->
+            <div class="absolute bottom-8 -right-8 bg-light-bg-card dark:bg-dark-bg-card border border-light-border-light dark:border-dark-border-light rounded-lg p-3 shadow-light dark:shadow-dark max-w-xs">
+              <div class="flex items-center">
+                <div class="w-3 h-3 bg-primary-blue rounded-full mr-2"></div>
+                <p class="text-sm font-medium text-light-text-primary dark:text-dark-text-primary">
+                  2x faster writing
+                </p>
+              </div>
+              <p class="text-xs text-light-text-secondary dark:text-dark-text-secondary mt-1">
+                When nothing breaks your flow
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </Container>
+
+  <!-- Trust indicators -->
+  <div class="border-t border-light-border-light dark:border-dark-border-light bg-light-bg-secondary/50 dark:bg-dark-bg-secondary/50">
+    <Container>
+      <div class="py-8">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 text-sm text-light-text-secondary dark:text-dark-text-secondary">
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-success-green mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            1000+ writers joined
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-success-green mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            500 lifetime deals left
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-success-green mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            No monthly fees, ever
+          </div>
+        </div>
+      </div>
+    </Container>
+  </div>
+
+</section>
+
+<style>
+  /* Critical CSS for hero section performance */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-pulse {
+      animation: none;
+    }
+  }
+</style>
