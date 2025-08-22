@@ -1,0 +1,219 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../components/ui/Container.astro';
+import Section from '../components/ui/Section.astro';
+import Card from '../components/ui/Card.astro';
+import Badge from '../components/ui/Badge.astro';
+---
+
+<Layout 
+	title="Welcome to the novel-finishers club ✍️ - Zeyn"
+	description="You're in! Check your email for early access details and launch updates. Help us build the perfect novelist's app."
+	noindex={true}
+>
+	<Section background="primary" spacing="xl">
+		<Container>
+			<div class="text-center mb-16">
+				
+				<!-- Success Icon -->
+				<div class="w-24 h-24 bg-success-green rounded-full flex items-center justify-center mx-auto mb-8">
+					<svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+						<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+					</svg>
+				</div>
+
+				<!-- Main Headline -->
+				<h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-light-text-primary dark:text-dark-text-primary mb-6">
+					Welcome to the <span class="text-success-green">novel-finishers club</span> ✍️
+				</h1>
+				
+				<!-- Confirmation Message -->
+				<p class="text-lg sm:text-xl text-light-text-secondary dark:text-dark-text-secondary mb-8 max-w-2xl mx-auto">
+					You're in! Check your email for early access details and launch updates.
+				</p>
+
+				<!-- Badge -->
+				<Badge variant="success" size="lg" class="mb-8">
+					🎉 Lifetime access secured at 70% off
+				</Badge>
+
+			</div>
+
+			<!-- What Happens Next -->
+			<div class="max-w-3xl mx-auto mb-16">
+				<Card class="mb-8">
+					<h2 class="text-2xl font-bold text-light-text-primary dark:text-dark-text-primary mb-6 text-center">
+						What happens next?
+					</h2>
+					
+					<div class="space-y-6">
+						<div class="flex items-start">
+							<div class="w-8 h-8 bg-primary-blue text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0 font-bold text-sm">
+								1
+							</div>
+							<div>
+								<h3 class="font-semibold text-light-text-primary dark:text-dark-text-primary mb-1">
+									Check your email (it might take a few minutes)
+								</h3>
+								<p class="text-light-text-secondary dark:text-dark-text-secondary">
+									We'll send you launch updates and early access information.
+								</p>
+							</div>
+						</div>
+
+						<div class="flex items-start">
+							<div class="w-8 h-8 bg-primary-blue text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0 font-bold text-sm">
+								2
+							</div>
+							<div>
+								<h3 class="font-semibold text-light-text-primary dark:text-dark-text-primary mb-1">
+									Get early access in 14 days
+								</h3>
+								<p class="text-light-text-secondary dark:text-dark-text-secondary">
+									You'll be among the first to experience distraction-free writing.
+								</p>
+							</div>
+						</div>
+
+						<div class="flex items-start">
+							<div class="w-8 h-8 bg-success-green text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0 font-bold text-sm">
+								3
+							</div>
+							<div>
+								<h3 class="font-semibold text-light-text-primary dark:text-dark-text-primary mb-1">
+									Start writing your novel the right way
+								</h3>
+								<p class="text-light-text-secondary dark:text-dark-text-secondary">
+									Never pay monthly fees again. Write with lifetime access to Zeyn.
+								</p>
+							</div>
+						</div>
+					</div>
+				</Card>
+			</div>
+
+			<!-- Research Form -->
+			<div class="max-w-2xl mx-auto">
+				<Card class="bg-gradient-to-br from-primary-blue-light to-accent-purple-light dark:from-primary-blue/20 dark:to-accent-purple/20 border-2 border-primary-blue/30 dark:border-primary-blue/50">
+					<div class="text-center mb-6">
+						<h2 class="text-xl sm:text-2xl font-bold text-light-text-primary dark:text-dark-text-primary mb-2">
+							Quick favor—help us build the perfect novelist's app
+						</h2>
+						<p class="text-light-text-secondary dark:text-dark-text-secondary">
+							Your input shapes Zeyn. Many requested features make it into the final product.
+						</p>
+					</div>
+
+					<form class="space-y-4">
+						<!-- Novel Question -->
+						<div>
+							<label for="novel-about" class="block text-sm font-medium text-light-text-primary dark:text-dark-text-primary mb-2">
+								What's your novel about? (One sentence is fine!)
+							</label>
+							<textarea 
+								id="novel-about"
+								rows="3"
+								class="w-full px-4 py-3 border border-light-border-medium dark:border-dark-border-medium rounded-lg 
+									focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-transparent
+									bg-light-bg-primary dark:bg-dark-bg-secondary 
+									text-light-text-primary dark:text-dark-text-primary
+									placeholder-light-text-muted dark:placeholder-dark-text-muted"
+								placeholder="A mystery set in 1920s Paris, following a detective who..."
+							></textarea>
+						</div>
+
+						<!-- Switch Reason -->
+						<div>
+							<label for="switch-reason" class="block text-sm font-medium text-light-text-primary dark:text-dark-text-primary mb-2">
+								What made you switch from Word/Google Docs/Scrivener?
+							</label>
+							<textarea 
+								id="switch-reason"
+								rows="3"
+								class="w-full px-4 py-3 border border-light-border-medium dark:border-dark-border-medium rounded-lg 
+									focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-transparent
+									bg-light-bg-primary dark:bg-dark-bg-secondary 
+									text-light-text-primary dark:text-dark-text-primary
+									placeholder-light-text-muted dark:placeholder-dark-text-muted"
+								placeholder="Too many distractions, lost files, formatting nightmares..."
+							></textarea>
+						</div>
+
+						<!-- Feature Request -->
+						<div>
+							<label for="feature-request" class="block text-sm font-medium text-light-text-primary dark:text-dark-text-primary mb-2">
+								What feature would help you write 500 more words tomorrow?
+							</label>
+							<textarea 
+								id="feature-request"
+								rows="3"
+								class="w-full px-4 py-3 border border-light-border-medium dark:border-dark-border-medium rounded-lg 
+									focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-transparent
+									bg-light-bg-primary dark:bg-dark-bg-secondary 
+									text-light-text-primary dark:text-dark-text-primary
+									placeholder-light-text-muted dark:placeholder-dark-text-muted"
+								placeholder="Better goal tracking, writing music, character sheets..."
+							></textarea>
+						</div>
+
+						<!-- Submit Button -->
+						<button 
+							type="submit"
+							class="w-full btn-base bg-primary-blue text-white hover:bg-primary-blue-hover 
+								px-6 py-3 text-base font-medium hover:-translate-y-0.5 transition-all duration-150"
+						>
+							Help shape Zeyn
+						</button>
+
+						<p class="text-xs text-center text-light-text-muted dark:text-dark-text-muted">
+							Optional, but incredibly helpful for building features you'll actually use.
+						</p>
+					</form>
+				</Card>
+			</div>
+
+			<!-- Social Sharing -->
+			<div class="text-center mt-16">
+				<p class="text-light-text-secondary dark:text-dark-text-secondary mb-4">
+					Know other writers struggling with Word? Share the love:
+				</p>
+				<a 
+					href="/" 
+					class="text-primary-blue hover:text-primary-blue-hover font-medium transition-colors duration-150"
+				>
+					← Back to landing page
+				</a>
+			</div>
+		</Container>
+	</Section>
+</Layout>
+
+<script>
+	// Simple form handling
+	const form = document.querySelector('form');
+	if (form) {
+		form.addEventListener('submit', function(e) {
+			e.preventDefault();
+			
+			// Get form data
+			const formData = new FormData(form);
+			const data = {
+				novelAbout: document.getElementById('novel-about')?.value,
+				switchReason: document.getElementById('switch-reason')?.value,
+				featureRequest: document.getElementById('feature-request')?.value
+			};
+			
+			// TODO: Send to analytics/backend
+			console.log('Research data:', data);
+			
+			// Show success message
+			const button = form.querySelector('button[type="submit"]');
+			if (button) {
+				button.textContent = 'Thanks! 🙏';
+				button.disabled = true;
+				button.classList.add('bg-success-green');
+				button.classList.remove('bg-primary-blue', 'hover:bg-primary-blue-hover');
+			}
+		});
+	}
+</script>
