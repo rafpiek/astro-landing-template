@@ -1,0 +1,228 @@
+---
+import { Image } from 'astro:assets';
+import Container from '../ui/Container.astro';
+import Section from '../ui/Section.astro';
+import Card from '../ui/Card.astro';
+
+// Import comparison images
+import zenModeLight from '../../assets/screenshots/light-mode/10-zen-mode.png';
+import documentEditorLight from '../../assets/screenshots/light-mode/08-document-editor.png';
+---
+
+<Section background="secondary" spacing="xl" id="problem">
+  <Container>
+    <div class="text-center mb-16">
+      <!-- Main Problem Headline -->
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-light-text-primary dark:text-dark-text-primary mb-8 max-w-4xl mx-auto">
+        Every time you open Word, 
+        <span class="text-red-600 dark:text-red-400">your novel dies a little</span>
+      </h2>
+      
+      <!-- Problem Description -->
+      <p class="text-lg sm:text-xl text-light-text-secondary dark:text-dark-text-secondary max-w-3xl mx-auto mb-12">
+        You're not struggling with writer's block. You're struggling with writer's <em>software</em>.
+      </p>
+    </div>
+
+    <!-- Pain Points Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16">
+      
+      <!-- Pain Point 1: Lost Flow -->
+      <Card class="text-center bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800">
+        <div class="w-12 h-12 bg-red-100 dark:bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-light-text-primary dark:text-dark-text-primary mb-3">
+          You lose the scene because you're fighting formatting
+        </h3>
+        <p class="text-light-text-secondary dark:text-dark-text-secondary text-sm">
+          You had the perfect dialogue in your head, but by the time you navigate past all the menus, it's gone.
+        </p>
+      </Card>
+
+      <!-- Pain Point 2: File Chaos -->
+      <Card class="text-center bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800">
+        <div class="w-12 h-12 bg-red-100 dark:bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h2a2 2 0 012 2v0M8 5a2 2 0 000 4h8a2 2 0 000-4M8 5v0"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-light-text-primary dark:text-dark-text-primary mb-3">
+          Chapters scattered across endless files and folders
+        </h3>
+        <p class="text-light-text-secondary dark:text-dark-text-secondary text-sm">
+          Your 300-page novel is trapped in files named "Chapter 3 FINAL v2 ACTUALLY FINAL.docx"
+        </p>
+      </Card>
+
+      <!-- Pain Point 3: Crashes and Lost Work -->
+      <Card class="text-center bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800">
+        <div class="w-12 h-12 bg-red-100 dark:bg-red-800 rounded-lg flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728L5.636 5.636m12.728 12.728L5.636 5.636"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-light-text-primary dark:text-dark-text-primary mb-3">
+          The cursor blinks mockingly in a sea of toolbars
+        </h3>
+        <p class="text-light-text-secondary dark:text-dark-text-secondary text-sm">
+          Word crashes. Your morning's work vanishes. Your motivation follows.
+        </p>
+      </Card>
+
+    </div>
+
+    <!-- Before/After Comparison -->
+    <div class="bg-light-bg-card dark:bg-dark-bg-card rounded-2xl p-8 lg:p-12 border border-light-border-light dark:border-dark-border-light">
+      
+      <div class="text-center mb-12">
+        <h3 class="text-2xl lg:text-3xl font-bold text-light-text-primary dark:text-dark-text-primary mb-4">
+          Your writing experience shouldn't be a battle
+        </h3>
+        <p class="text-lg text-light-text-secondary dark:text-dark-text-secondary">
+          Compare the chaos of Word with the clarity of Zeyn
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        
+        <!-- BEFORE: Cluttered Interface (Mockup) -->
+        <div>
+          <div class="text-center mb-6">
+            <div class="inline-flex items-center px-4 py-2 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full text-sm font-medium mb-2">
+              😫 Before: Word
+            </div>
+            <h4 class="text-lg font-semibold text-light-text-primary dark:text-dark-text-primary">
+              Drowning in distractions
+            </h4>
+          </div>
+          
+          <!-- Mockup of cluttered interface -->
+          <div class="screenshot-container bg-gray-100 dark:bg-gray-800 p-4 aspect-screenshot relative overflow-hidden">
+            <!-- Toolbar mockup -->
+            <div class="bg-gray-200 dark:bg-gray-700 h-8 mb-2 rounded"></div>
+            <div class="bg-gray-200 dark:bg-gray-700 h-6 mb-2 rounded"></div>
+            <div class="bg-gray-200 dark:bg-gray-700 h-6 mb-4 rounded"></div>
+            
+            <!-- Ruler mockup -->
+            <div class="bg-gray-300 dark:bg-gray-600 h-4 mb-4 rounded"></div>
+            
+            <!-- Document area with distractions -->
+            <div class="bg-white dark:bg-gray-900 flex-1 p-4 rounded border-2 border-red-300 dark:border-red-600 relative">
+              <div class="space-y-2">
+                <div class="h-3 bg-gray-300 dark:bg-gray-600 rounded w-3/4"></div>
+                <div class="h-3 bg-gray-300 dark:bg-gray-600 rounded w-full"></div>
+                <div class="h-3 bg-gray-300 dark:bg-gray-600 rounded w-5/6"></div>
+              </div>
+              
+              <!-- Popup distractions -->
+              <div class="absolute top-2 right-2 bg-yellow-400 text-yellow-900 px-2 py-1 text-xs rounded animate-pulse">
+                AutoSave Error!
+              </div>
+              <div class="absolute bottom-2 left-2 bg-blue-500 text-white px-2 py-1 text-xs rounded">
+                Track Changes
+              </div>
+            </div>
+            
+            <!-- Status bar mockup -->
+            <div class="bg-gray-200 dark:bg-gray-700 h-4 mt-2 rounded"></div>
+          </div>
+          
+          <div class="mt-4 space-y-2 text-sm text-light-text-secondary dark:text-dark-text-secondary">
+            <div class="flex items-center">
+              <span class="text-red-500 mr-2">✕</span>
+              47 toolbar buttons demanding attention
+            </div>
+            <div class="flex items-center">
+              <span class="text-red-500 mr-2">✕</span>
+              Constant formatting popups and suggestions
+            </div>
+            <div class="flex items-center">
+              <span class="text-red-500 mr-2">✕</span>
+              Files scattered across folders and versions
+            </div>
+          </div>
+        </div>
+
+        <!-- AFTER: Clean Zeyn Interface -->
+        <div>
+          <div class="text-center mb-6">
+            <div class="inline-flex items-center px-4 py-2 bg-success-green-light text-success-green rounded-full text-sm font-medium mb-2">
+              ✨ After: Zeyn
+            </div>
+            <h4 class="text-lg font-semibold text-light-text-primary dark:text-dark-text-primary">
+              Pure focus on your story
+            </h4>
+          </div>
+          
+          <!-- Zeyn zen mode screenshot -->
+          <div class="screenshot-container">
+            <Image
+              src={zenModeLight}
+              alt="Zeyn zen mode - clean, distraction-free writing interface"
+              class="w-full h-auto rounded-lg"
+              widths={[400, 600]}
+              sizes="(max-width: 1024px) 400px, 600px"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          
+          <div class="mt-4 space-y-2 text-sm text-light-text-secondary dark:text-dark-text-secondary">
+            <div class="flex items-center">
+              <span class="text-success-green mr-2">✓</span>
+              Just you and your words—nothing else
+            </div>
+            <div class="flex items-center">
+              <span class="text-success-green mr-2">✓</span>
+              Chapters organized automatically
+            </div>
+            <div class="flex items-center">
+              <span class="text-success-green mr-2">✓</span>
+              Never lose your progress again
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- Call to Action -->
+      <div class="text-center mt-12">
+        <p class="text-lg font-medium text-light-text-primary dark:text-dark-text-primary mb-4">
+          Which environment helps you finish your novel?
+        </p>
+        <a href="#hero" class="btn-base bg-primary-blue text-white hover:bg-primary-blue-hover px-8 py-3 text-base font-medium hover:-translate-y-0.5 transition-all duration-150">
+          Choose Zeyn → Get Early Access
+        </a>
+      </div>
+      
+    </div>
+
+  </Container>
+</Section>
+
+<style>
+  /* Animation for the mockup elements */
+  @keyframes distraction {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  .animate-pulse {
+    animation: distraction 2s ease-in-out infinite;
+  }
+  
+  /* Responsive aspect ratio for comparison */
+  .aspect-screenshot {
+    aspect-ratio: 16 / 10;
+  }
+  
+  @media (max-width: 1024px) {
+    .aspect-screenshot {
+      aspect-ratio: 4 / 3;
+    }
+  }
+</style>
