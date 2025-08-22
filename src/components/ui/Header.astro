@@ -1,0 +1,76 @@
+---
+import Container from './Container.astro';
+import ThemeToggle from './ThemeToggle.tsx';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-light-bg-primary/80 dark:bg-dark-bg-primary/80 backdrop-blur-md border-b border-light-border-light/50 dark:border-dark-border-light/50">
+  <Container>
+    <div class="flex items-center justify-between py-4">
+      
+      <!-- Logo/Brand -->
+      <div class="flex items-center">
+        <a href="/" class="flex items-center group">
+          <!-- Zeyn Logo -->
+          <div class="w-8 h-8 bg-primary-blue rounded-lg flex items-center justify-center mr-3 group-hover:scale-105 transition-transform duration-200">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <span class="text-lg font-bold text-light-text-primary dark:text-dark-text-primary group-hover:text-primary-blue transition-colors duration-200">
+            Zeyn
+          </span>
+        </a>
+      </div>
+
+      <!-- Navigation & Theme Toggle -->
+      <div class="flex items-center space-x-4">
+        
+        <!-- Quick Navigation (optional) -->
+        <nav class="hidden md:flex items-center space-x-6">
+          <a href="#features" class="text-sm text-light-text-secondary dark:text-dark-text-secondary hover:text-primary-blue transition-colors duration-200">
+            Features
+          </a>
+          <a href="#faq" class="text-sm text-light-text-secondary dark:text-dark-text-secondary hover:text-primary-blue transition-colors duration-200">
+            FAQ
+          </a>
+        </nav>
+
+        <!-- Theme Toggle -->
+        <ThemeToggle client:load />
+
+        <!-- CTA Button -->
+        <a 
+          href="#hero" 
+          class="hidden sm:inline-flex btn-base bg-primary-blue text-white hover:bg-primary-blue-hover px-4 py-2 text-sm font-medium hover:-translate-y-0.5 transition-all duration-150"
+        >
+          Get Early Access
+        </a>
+
+      </div>
+    </div>
+  </Container>
+</header>
+
+<!-- Spacer to prevent content from hiding under fixed header -->
+<div class="h-16" aria-hidden="true"></div>
+
+<style>
+  /* Progressive enhancement for backdrop blur */
+  @supports (backdrop-filter: blur(12px)) {
+    header {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  }
+  
+  /* Fallback for browsers without backdrop filter */
+  @supports not (backdrop-filter: blur(12px)) {
+    header {
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+    
+    .dark header {
+      background-color: rgba(10, 10, 10, 0.95);
+    }
+  }
+</style>

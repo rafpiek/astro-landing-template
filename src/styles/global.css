@@ -19,22 +19,36 @@ body {
   padding: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.5;
-  color: #111827;
-  background-color: #FFFFFF;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Dark mode support */
+/* Default light mode styles */
+html:not(.dark) body {
+  color: #111827;
+  background-color: #FFFFFF;
+}
+
+/* Dark mode styles - default */
+html.dark body,
+html:not(.light) body {
+  color: #FFFFFF;
+  background-color: #0A0A0A;
+}
+
+/* Handle system preference but prioritize explicit class */
 @media (prefers-color-scheme: dark) {
-  body {
+  html:not(.light) body {
     color: #FFFFFF;
     background-color: #0A0A0A;
   }
 }
 
-.dark body {
-  color: #FFFFFF;
-  background-color: #0A0A0A;
+@media (prefers-color-scheme: light) {
+  html.light body {
+    color: #111827;
+    background-color: #FFFFFF;
+  }
 }
 
 /* Critical performance styles */

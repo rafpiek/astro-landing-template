@@ -28,6 +28,28 @@ const imageURL = new URL(image, siteUrl);
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		
+		<!-- Theme initialization script - must be inline and run immediately -->
+		<script is:inline>
+			// Initialize theme before page render to prevent flash
+			(function() {
+				const storedTheme = localStorage.getItem('theme');
+				const theme = storedTheme || 'dark'; // Default to dark mode
+				
+				if (theme === 'dark') {
+					document.documentElement.classList.add('dark');
+					document.documentElement.classList.remove('light');
+				} else {
+					document.documentElement.classList.add('light');
+					document.documentElement.classList.remove('dark');
+				}
+				
+				// Store the theme if it wasn't already stored
+				if (!storedTheme) {
+					localStorage.setItem('theme', theme);
+				}
+			})();
+		</script>
+		
 		<!-- Preconnect to external domains for performance -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -69,7 +91,8 @@ const imageURL = new URL(image, siteUrl);
 		<!-- Additional SEO -->
 		<meta name="author" content="Zeyn" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="theme-color" content="#4F81F4" />
+		<meta name="theme-color" content="#4F81F4" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)" />
 		
 		<!-- JSON-LD Structured Data -->
 		<script type="application/ld+json" is:inline>
