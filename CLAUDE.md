@@ -46,4 +46,8 @@ This is an Astro-based landing page for Zeyn (a writing application) using React
 ## KEY RULES
 
 - never run dev server on your own, never run `bun run dev` or `bun dev`
-- 
+
+## TESTING
+
+- you are allowed to use playwright mcp to test sth
+- you can create playwright tests in the `e2e` folder if needed
