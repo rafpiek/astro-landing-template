@@ -1,0 +1,313 @@
+---
+import { Image } from 'astro:assets';
+import Container from '../ui/Container.astro';
+import Section from '../ui/Section.astro';
+import Card from '../ui/Card.astro';
+import Badge from '../ui/Badge.astro';
+
+// Import feature screenshots
+import zenModeLight from '../../assets/screenshots/light-mode/10-zen-mode.png';
+import chaptersLight from '../../assets/screenshots/light-mode/05-chapters-overview.png';
+import statsLight from '../../assets/screenshots/light-mode/07-stats-all-time.png';
+
+import zenModeDark from '../../assets/screenshots/dark-mode/dark-10-zen-mode.png';
+import chaptersDark from '../../assets/screenshots/dark-mode/dark-05-chapters-overview.png';
+import statsDark from '../../assets/screenshots/dark-mode/dark-07-stats-all-time.png';
+---
+
+<Section background="primary" spacing="xl" id="features">
+  <Container>
+    
+    <!-- Section Header -->
+    <div class="text-center mb-16 lg:mb-20">
+      <Badge variant="primary" size="md" class="mb-6">
+        ✨ Three Features That Change Everything
+      </Badge>
+      
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-light-text-primary dark:text-dark-text-primary mb-6">
+        Built specifically for <span class="text-primary-blue">novelists</span>
+      </h2>
+      
+      <p class="text-lg sm:text-xl text-light-text-secondary dark:text-dark-text-secondary max-w-3xl mx-auto">
+        Every feature exists for one reason: to help you finish your book. 
+        No bloat. No distractions. Just pure novel-writing power.
+      </p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="space-y-24 lg:space-y-32">
+      
+      <!-- Feature 1: Zen Mode -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="order-2 lg:order-1">
+          <div class="mb-6">
+            <Badge variant="success" size="sm" class="mb-4">
+              Feature #1
+            </Badge>
+            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-light-text-primary dark:text-dark-text-primary mb-4">
+              Disappear into your story
+            </h3>
+          </div>
+          
+          <p class="text-lg text-light-text-secondary dark:text-dark-text-secondary mb-6">
+            Just you, your words, and the world you're creating. No toolbars. No notifications. No distractions. Pure novel-writing bliss.
+          </p>
+          
+          <div class="bg-success-green-light dark:bg-success-green/20 border border-success-green/30 rounded-lg p-4 mb-6">
+            <div class="flex items-center">
+              <div class="w-8 h-8 bg-success-green rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <p class="text-success-green dark:text-success-green-light font-semibold">
+                Write 2x faster when nothing breaks your flow
+              </p>
+            </div>
+          </div>
+          
+          <div class="space-y-3 text-light-text-secondary dark:text-dark-text-secondary">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-success-green mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              Immersive full-screen writing mode
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-success-green mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              Zero UI elements to distract from your story
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-success-green mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              Seamless dark/light mode for any time of day
+            </div>
+          </div>
+        </div>
+        
+        <div class="order-1 lg:order-2">
+          <div class="screenshot-container">
+            <!-- Light mode -->
+            <Image
+              src={zenModeLight}
+              alt="Zeyn zen mode - immersive distraction-free writing interface"
+              class="w-full h-auto rounded-lg dark:hidden"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 1024px) 400px, 600px"
+              loading="lazy"
+              decoding="async"
+            />
+            <!-- Dark mode -->
+            <Image
+              src={zenModeDark}
+              alt="Zeyn zen mode - immersive distraction-free writing interface in dark mode"
+              class="w-full h-auto rounded-lg hidden dark:block"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 1024px) 400px, 600px"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 2: Chapter Organization -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <div class="screenshot-container">
+            <!-- Light mode -->
+            <Image
+              src={chaptersLight}
+              alt="Zeyn chapter organization - intuitive novel structure management"
+              class="w-full h-auto rounded-lg dark:hidden"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 1024px) 400px, 600px"
+              loading="lazy"
+              decoding="async"
+            />
+            <!-- Dark mode -->
+            <Image
+              src={chaptersDark}
+              alt="Zeyn chapter organization - intuitive novel structure management in dark mode"
+              class="w-full h-auto rounded-lg hidden dark:block"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 1024px) 400px, 600px"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+        
+        <div>
+          <div class="mb-6">
+            <Badge variant="primary" size="sm" class="mb-4">
+              Feature #2
+            </Badge>
+            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-light-text-primary dark:text-dark-text-primary mb-4">
+              Your novel, beautifully organized
+            </h3>
+          </div>
+          
+          <p class="text-lg text-light-text-secondary dark:text-dark-text-secondary mb-6">
+            Drag and drop chapters like scenes in a movie. See your whole story at a glance. Navigate your 80,000-word novel in seconds.
+          </p>
+          
+          <div class="bg-primary-blue-light dark:bg-primary-blue/20 border border-primary-blue/30 rounded-lg p-4 mb-6">
+            <div class="flex items-center">
+              <div class="w-8 h-8 bg-primary-blue rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <p class="text-primary-blue font-semibold">
+                Stop losing track of your plot threads
+              </p>
+            </div>
+          </div>
+          
+          <div class="space-y-3 text-light-text-secondary dark:text-dark-text-secondary">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-primary-blue mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              Intuitive drag-and-drop chapter reordering
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-primary-blue mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              Visual novel structure at a glance
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-primary-blue mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              Jump to any chapter instantly
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3: Writer's Dashboard -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="order-2 lg:order-1">
+          <div class="mb-6">
+            <Badge variant="warning" size="sm" class="mb-4">
+              Feature #3
+            </Badge>
+            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-light-text-primary dark:text-dark-text-primary mb-4">
+              See your novel come alive
+            </h3>
+          </div>
+          
+          <p class="text-lg text-light-text-secondary dark:text-dark-text-secondary mb-6">
+            Daily word counts that celebrate progress. Chapter completion that feels like victories. Stats that keep you writing when motivation dips.
+          </p>
+          
+          <div class="bg-achievement-orange-light dark:bg-achievement-orange/20 border border-achievement-orange/30 rounded-lg p-4 mb-6">
+            <div class="flex items-center">
+              <div class="w-8 h-8 bg-achievement-orange rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <p class="text-achievement-orange font-semibold">
+                Turn writing into a habit, not a struggle
+              </p>
+            </div>
+          </div>
+          
+          <div class="space-y-3 text-light-text-secondary dark:text-dark-text-secondary">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-achievement-orange mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              Motivating progress tracking and analytics
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-achievement-orange mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              Daily writing goals that adapt to your pace
+            </div>
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-achievement-orange mr-3" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              Celebrate milestones and maintain momentum
+            </div>
+          </div>
+        </div>
+        
+        <div class="order-1 lg:order-2">
+          <div class="screenshot-container">
+            <!-- Light mode -->
+            <Image
+              src={statsLight}
+              alt="Zeyn writer's dashboard - motivating progress tracking and analytics"
+              class="w-full h-auto rounded-lg dark:hidden"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 1024px) 400px, 600px"
+              loading="lazy"
+              decoding="async"
+            />
+            <!-- Dark mode -->
+            <Image
+              src={statsDark}
+              alt="Zeyn writer's dashboard - motivating progress tracking and analytics in dark mode"
+              class="w-full h-auto rounded-lg hidden dark:block"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 1024px) 400px, 600px"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center mt-16 lg:mt-20">
+      <div class="bg-gradient-to-r from-primary-blue/10 to-success-green/10 dark:from-primary-blue/20 dark:to-success-green/20 rounded-2xl p-8 lg:p-12 border border-primary-blue/20 dark:border-primary-blue/40">
+        <h3 class="text-2xl lg:text-3xl font-bold text-light-text-primary dark:text-dark-text-primary mb-4">
+          Ready to write your novel the way it deserves?
+        </h3>
+        <p class="text-lg text-light-text-secondary dark:text-dark-text-secondary mb-6 max-w-2xl mx-auto">
+          Join 1000+ novelists who chose focus over features. Get lifetime access before the launch.
+        </p>
+        <a href="#hero" class="btn-base bg-primary-blue text-white hover:bg-primary-blue-hover px-8 py-4 text-lg font-medium hover:-translate-y-0.5 transition-all duration-150 inline-flex items-center">
+          Get Early Access + Lifetime Deal
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </Container>
+</Section>
+
+<style>
+  /* Progressive enhancement for advanced CSS features */
+  @supports (backdrop-filter: blur(10px)) {
+    .screenshot-container::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(45deg, rgba(79, 129, 244, 0.1), rgba(16, 185, 129, 0.1));
+      border-radius: inherit;
+      z-index: -1;
+    }
+  }
+  
+  /* Smooth scroll behavior for internal links */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+</style>
