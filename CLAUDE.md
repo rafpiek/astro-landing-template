@@ -42,3 +42,7 @@ This is an Astro-based landing page for Zeyn (a writing application) using React
 - Entry point: src/pages/index.astro renders the Hero component
 - Layout wrapper: src/layouts/Layout.astro provides HTML structure and imports global styles
 - Interactive components: src/components/Hero.jsx demonstrates React state management with Tailwind styling
+
+## KEY RULES
+
+- never run dev server on your own, never run `bun run dev` or `bun dev`
