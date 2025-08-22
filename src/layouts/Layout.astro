@@ -17,8 +17,9 @@ const {
   noindex = false
 } = Astro.props;
 
-const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site);
-const imageURL = new URL(image, Astro.site);
+const siteUrl = Astro.site || 'https://zeyn.app';
+const canonicalURL = canonical || new URL(Astro.url.pathname, siteUrl);
+const imageURL = new URL(image, siteUrl);
 ---
 
 <!doctype html>

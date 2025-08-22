@@ -5,6 +5,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://zeyn.app', // Required for proper URL generation
   integrations: [
     react(),
     tailwind({
@@ -29,10 +30,7 @@ export default defineConfig({
     remotePatterns: [],
   },
   
-  // Experimental features for performance
-  experimental: {
-    contentCollectionCache: true,
-  },
+  // No experimental features needed for this project
   
   // Output settings for SSR
   output: 'static', // Generate static files for maximum performance
