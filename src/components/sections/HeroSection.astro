@@ -2,66 +2,181 @@
 import { Image } from 'astro:assets';
 import Container from '../ui/Container.astro';
 import EmailSignupForm from '../ui/EmailSignupForm.tsx';
-import CountdownTimer from '../ui/CountdownTimer.tsx';
+import TypewriterText from '../ui/TypewriterText.tsx';
 
 // Import hero images for optimization
-import zenModeLight from '../../assets/screenshots/light-mode/10-zen-mode.png';
 import zenModeDark from '../../assets/screenshots/dark-mode/dark-10-zen-mode.png';
-
-// Calculate launch date (14 days from now for demo)
-const launchDate = new Date();
-launchDate.setDate(launchDate.getDate() + 14);
+import chaptersDark from '../../assets/screenshots/dark-mode/dark-05-chapters-overview.png';
+import statsDark from '../../assets/screenshots/dark-mode/dark-07-stats-all-time.png';
+import homeDark from '../../assets/screenshots/dark-mode/dark-01-home-dashboard.png';
+import editorDark from '../../assets/screenshots/dark-mode/dark-08-document-editor.png';
 ---
 
 <section id="hero" class="relative min-h-screen bg-black overflow-hidden">
   
   <Container class="relative">
-    <div class="min-h-screen flex items-center justify-center">
-      <div class="text-center max-w-4xl mx-auto">
+    <div class="min-h-screen flex items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
         
-        <!-- Main Headline -->
-        <h1 class="text-5xl sm:text-6xl lg:text-8xl font-medium text-white leading-[1.1] mb-8">
-          The writing app built for <span class="text-gray-400">novelists</span>
-        </h1>
+        <!-- Left Column: Copy and CTA -->
+        <div class="text-center lg:text-left">
+          
+          <!-- Main Headline with Typewriter -->
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-medium text-white leading-[1.1] mb-8">
+            <span class="block">The writing app</span>
+            <span class="block">built for <TypewriterText 
+              client:load
+              words={["novelists", "writers", "storytellers", "authors"]}
+              className="text-gray-400"
+              speed={150}
+              deleteSpeed={100}
+              delayBetween={2000}
+            /></span>
+          </h1>
 
-        <!-- Subheadline -->
-        <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-          Distraction-free writing. Chapter organization. Progress tracking.<br/>
-          Everything you need to finish your book.
-        </p>
+          <!-- Subheadline -->
+          <p class="text-xl text-gray-400 mb-12 max-w-xl mx-auto lg:mx-0">
+            Distraction-free writing. Chapter organization. Progress tracking.
+            Everything you need to finish your book.
+          </p>
 
-        <!-- CTA -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <EmailSignupForm 
-            client:load
-            placeholder="Enter your email"
-            buttonText="Get early access"
-            variant="inline"
-            className=""
-          />
-          <p class="text-sm text-gray-500">Free during launch week</p>
+          <!-- CTA -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
+            <EmailSignupForm 
+              client:load
+              placeholder="Enter your email"
+              buttonText="Get early access"
+              variant="inline"
+              className=""
+            />
+            <p class="text-sm text-gray-500">Free during launch week</p>
+          </div>
+
+          <!-- Trust indicators -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-gray-500">
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+              <span>1000+ writers joined</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+              <span>Launch in 2 weeks</span>
+            </div>
+          </div>
+
         </div>
 
-      </div>
-    </div>
+        <!-- Right Column: Screenshots Showcase -->
+        <div class="relative lg:h-[600px]">
+          
+          <!-- Main Screenshot - Zen Mode -->
+          <div class="absolute top-0 right-0 w-[70%] z-10">
+            <div class="relative overflow-hidden rounded-lg border border-gray-800 shadow-2xl">
+              <Image
+                src={zenModeDark}
+                alt="Zeyn zen mode - distraction-free writing"
+                class="w-full h-auto"
+                widths={[400, 600, 800]}
+                sizes="(max-width: 768px) 400px, 600px"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
 
-    <!-- Product Screenshot -->
-    <div class="relative max-w-6xl mx-auto">
-      <div class="relative overflow-hidden rounded-lg border border-gray-800">
-        <!-- Dark mode screenshot -->
-        <Image
-          src={zenModeDark}
-          alt="Zeyn writing app - clean interface for novelists"
-          class="w-full h-auto"
-          widths={[800, 1200, 1600]}
-          sizes="(max-width: 768px) 800px, (max-width: 1200px) 1200px, 1600px"
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
-        />
+          <!-- Secondary Screenshot - Chapters -->
+          <div class="absolute top-16 left-0 w-[60%] z-20 transform rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
+            <div class="relative overflow-hidden rounded-lg border border-gray-800 shadow-xl">
+              <Image
+                src={chaptersDark}
+                alt="Zeyn chapter organization"
+                class="w-full h-auto"
+                widths={[300, 450, 600]}
+                sizes="(max-width: 768px) 300px, 450px"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+          </div>
+
+          <!-- Floating Screenshot - Stats -->
+          <div class="absolute bottom-20 right-8 w-[45%] z-15 transform rotate-[3deg] hover:rotate-0 transition-transform duration-500">
+            <div class="relative overflow-hidden rounded-lg border border-gray-800 shadow-lg">
+              <Image
+                src={statsDark}
+                alt="Zeyn progress tracking"
+                class="w-full h-auto"
+                widths={[250, 350, 450]}
+                sizes="(max-width: 768px) 250px, 350px"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+
+          <!-- Floating Screenshot - Dashboard -->
+          <div class="absolute bottom-0 left-12 w-[50%] z-5 transform rotate-[-1deg] hover:rotate-0 transition-transform duration-500">
+            <div class="relative overflow-hidden rounded-lg border border-gray-800 shadow-lg opacity-90">
+              <Image
+                src={homeDark}
+                alt="Zeyn home dashboard"
+                class="w-full h-auto"
+                widths={[250, 350, 450]}
+                sizes="(max-width: 768px) 250px, 350px"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+
+          <!-- Accent Screenshot - Editor (barely visible in background) -->
+          <div class="absolute top-32 right-16 w-[40%] z-1 transform rotate-[1deg] opacity-60">
+            <div class="relative overflow-hidden rounded-lg border border-gray-700 shadow-sm">
+              <Image
+                src={editorDark}
+                alt="Zeyn document editor"
+                class="w-full h-auto"
+                widths={[200, 300, 400]}
+                sizes="(max-width: 768px) 200px, 300px"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </div>
     
   </Container>
 
 </section>
+
+<style>
+  /* Subtle animations for screenshot hover effects */
+  @media (prefers-reduced-motion: no-preference) {
+    [class*="transform"]:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .lg\:h-\[600px\] {
+      height: 400px !important;
+    }
+    
+    [class*="absolute"] {
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+      width: 100% !important;
+      transform: none !important;
+      margin-bottom: 1rem;
+    }
+  }
+</style>
