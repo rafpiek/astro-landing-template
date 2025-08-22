@@ -1,0 +1,344 @@
+---
+import Container from '../ui/Container.astro';
+import Section from '../ui/Section.astro';
+import Card from '../ui/Card.astro';
+import Badge from '../ui/Badge.astro';
+import EmailSignupForm from '../ui/EmailSignupForm.tsx';
+import CountdownTimer from '../ui/CountdownTimer.tsx';
+
+// Calculate launch date (14 days from now for demo)
+const launchDate = new Date();
+launchDate.setDate(launchDate.getDate() + 14);
+
+// FAQ data
+const faqs = [
+  {
+    question: "Will this actually help me finish my novel?",
+    answer: "Zeyn removes every excuse except the one that matters: sitting down to write. When your tools get out of your way, your creativity takes center stage."
+  },
+  {
+    question: "Can I import my existing Word manuscript?",
+    answer: "Yes! Drag and drop your .docx files and we'll organize them into chapters automatically. No reformatting, no lost work, no hassle."
+  },
+  {
+    question: "What if I write on multiple devices?",
+    answer: "Your novel syncs everywhere instantly. Start on your laptop during lunch, continue on your iPad in bed. Your story follows you."
+  },
+  {
+    question: "How do I export for publishers/agents?",
+    answer: "One-click export to Word, PDF, or industry-standard manuscript format. Professional formatting that meets submission guidelines."
+  },
+  {
+    question: "What happens after the lifetime deal ends?",
+    answer: "Nothing! You write forever, we never charge again. No subscriptions, no surprise bills, just lifetime access to your writing sanctuary."
+  },
+  {
+    question: "Is my novel safe?",
+    answer: "Your work is automatically backed up to cloud + local device. Your novel is safer in Zeyn than scattered across Word documents on your desktop."
+  }
+];
+---
+
+<!-- Social Proof Section -->
+<Section background="secondary" spacing="lg" id="social-proof">
+  <Container>
+    <div class="text-center mb-16">
+      <Badge variant="info" size="md" class="mb-6">
+        👨‍💻 Built by a novelist, for novelists
+      </Badge>
+      
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-light-text-primary dark:text-dark-text-primary mb-8">
+        Born from <span class="text-accent-purple">frustration</span>, 
+        built with <span class="text-success-green">purpose</span>
+      </h2>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <Card class="bg-gradient-to-br from-light-bg-card to-light-bg-secondary dark:from-dark-bg-card dark:to-dark-bg-secondary border-2 border-primary-blue/20 dark:border-primary-blue/40">
+        <div class="flex items-start">
+          <!-- Author Avatar Placeholder -->
+          <div class="w-16 h-16 bg-primary-blue rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          
+          <div>
+            <blockquote class="text-lg sm:text-xl text-light-text-primary dark:text-dark-text-primary mb-6 italic">
+              "I was 40,000 words into my debut novel when Word corrupted my file. <em>Again.</em> 
+              That night, I started building Zeyn—a writing app that treats your novel like 
+              the masterpiece it's meant to be, not just another document."
+            </blockquote>
+            
+            <div class="mb-6">
+              <p class="font-semibold text-light-text-primary dark:text-dark-text-primary">
+                — Zeyn Founder
+              </p>
+              <p class="text-light-text-secondary dark:text-dark-text-secondary text-sm">
+                Novelist & Software Engineer
+              </p>
+            </div>
+            
+            <div class="bg-primary-blue-light dark:bg-primary-blue/20 border border-primary-blue/30 rounded-lg p-4">
+              <p class="text-primary-blue font-semibold text-center">
+                Every feature exists for one reason: to help you finish your book.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </Container>
+</Section>
+
+<!-- Urgency & Scarcity Section -->
+<Section background="primary" spacing="xl" id="urgency">
+  <Container>
+    <div class="text-center">
+      <!-- Main Urgency Message -->
+      <div class="mb-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-light-text-primary dark:text-dark-text-primary mb-6">
+          Your novel <span class="text-achievement-orange">can't wait</span> 14 more days
+        </h2>
+        
+        <p class="text-xl sm:text-2xl text-light-text-secondary dark:text-dark-text-secondary mb-8 max-w-3xl mx-auto">
+          In 2 weeks, pricing goes from <span class="line-through text-light-text-muted dark:text-dark-text-muted">$47 lifetime</span> to <span class="text-red-600 dark:text-red-400 font-bold">$19/month forever</span>
+        </p>
+        
+        <!-- Countdown Timer -->
+        <div class="mb-8">
+          <CountdownTimer 
+            client:load
+            targetDate={launchDate}
+            size="lg"
+            showLabels={true}
+            className="justify-center"
+          />
+        </div>
+      </div>
+
+      <!-- Benefits Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        
+        <Card class="text-center bg-success-green-light dark:bg-success-green/20 border-success-green/30">
+          <div class="w-12 h-12 bg-success-green rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-success-green mb-2">Lifetime Deal</h3>
+          <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">
+            Never pay monthly fees for your writing app again
+          </p>
+        </Card>
+
+        <Card class="text-center bg-primary-blue-light dark:bg-primary-blue/20 border-primary-blue/30">
+          <div class="w-12 h-12 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-primary-blue mb-2">Shape the Roadmap</h3>
+          <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">
+            Request features that help YOU finish your novel
+          </p>
+        </Card>
+
+        <Card class="text-center bg-accent-purple-light dark:bg-accent-purple/20 border-accent-purple/30">
+          <div class="w-12 h-12 bg-accent-purple rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-accent-purple mb-2">Priority Support</h3>
+          <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">
+            Get help within hours, not days
+          </p>
+        </Card>
+
+        <Card class="text-center bg-achievement-orange-light dark:bg-achievement-orange/20 border-achievement-orange/30">
+          <div class="w-12 h-12 bg-achievement-orange rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-achievement-orange mb-2">First Access</h3>
+          <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">
+            Be first to try new novel-writing features
+          </p>
+        </Card>
+
+      </div>
+
+      <!-- Scarcity Alert -->
+      <div class="bg-red-50 dark:bg-red-900/20 border-2 border-red-200 dark:border-red-800 rounded-xl p-6 mb-8 max-w-lg mx-auto">
+        <div class="flex items-center justify-center mb-3">
+          <svg class="w-6 h-6 text-red-600 dark:text-red-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+          </svg>
+          <p class="text-red-600 dark:text-red-400 font-bold">Only 500 lifetime deals available</p>
+        </div>
+        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary text-center">
+          After they're gone, it's $19/month. Forever.
+        </p>
+      </div>
+
+      <!-- Main CTA -->
+      <div class="mb-8">
+        <EmailSignupForm 
+          client:load
+          placeholder="Enter your email for lifetime access"
+          buttonText="Claim Your Lifetime Deal Now"
+          variant="default"
+          className="max-w-md mx-auto"
+        />
+      </div>
+
+    </div>
+  </Container>
+</Section>
+
+<!-- FAQ Section -->
+<Section background="secondary" spacing="xl" id="faq">
+  <Container>
+    <div class="text-center mb-16">
+      <Badge variant="info" size="md" class="mb-6">
+        ❓ Frequently Asked Questions
+      </Badge>
+      
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-light-text-primary dark:text-dark-text-primary mb-6">
+        Everything you need to know
+      </h2>
+      
+      <p class="text-lg sm:text-xl text-light-text-secondary dark:text-dark-text-secondary max-w-2xl mx-auto">
+        We've answered the most common questions from fellow novelists. 
+        Still have questions? We're here to help.
+      </p>
+    </div>
+
+    <div class="max-w-4xl mx-auto space-y-6">
+      {faqs.map((faq, index) => (
+        <Card key={index} class="group cursor-pointer hover:border-primary-blue/50 transition-all duration-200" hover={false}>
+          <details class="group">
+            <summary class="flex items-center justify-between cursor-pointer list-none">
+              <h3 class="text-lg sm:text-xl font-semibold text-light-text-primary dark:text-dark-text-primary pr-4">
+                {faq.question}
+              </h3>
+              <svg class="w-5 h-5 text-light-text-secondary dark:text-dark-text-secondary group-open:rotate-180 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="mt-4 pt-4 border-t border-light-border-light dark:border-dark-border-light">
+              <p class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed">
+                {faq.answer}
+              </p>
+            </div>
+          </details>
+        </Card>
+      ))}
+    </div>
+
+    <!-- FAQ CTA -->
+    <div class="text-center mt-12">
+      <p class="text-light-text-secondary dark:text-dark-text-secondary mb-4">
+        Still have questions? We're here to help.
+      </p>
+      <a href="#hero" class="text-primary-blue hover:text-primary-blue-hover font-medium transition-colors duration-150">
+        Get early access and ask us directly →
+      </a>
+    </div>
+  </Container>
+</Section>
+
+<!-- Footer CTA -->
+<Section background="primary" spacing="xl" id="footer-cta">
+  <Container>
+    <div class="text-center">
+      <!-- Final Headline -->
+      <h2 class="text-3xl sm:text-4xl lg:text-6xl font-bold text-light-text-primary dark:text-dark-text-primary mb-6">
+        Your novel is <span class="text-primary-blue">waiting</span>
+      </h2>
+      
+      <p class="text-lg sm:text-xl text-light-text-secondary dark:text-dark-text-secondary mb-8 max-w-3xl mx-auto">
+        Don't let another day pass fighting your writing app instead of finishing your book. 
+        Join the writers who chose focus over features.
+      </p>
+
+      <!-- Final Countdown -->
+      <div class="mb-8">
+        <Badge variant="warning" size="lg" class="animate-pulse">
+          ⏰ 14 days left at this price
+        </Badge>
+      </div>
+
+      <!-- Final CTA -->
+      <div class="mb-12">
+        <EmailSignupForm 
+          client:load
+          placeholder="Your email for lifetime access"
+          buttonText="Claim Your Lifetime Deal"
+          variant="default"
+          className="max-w-lg mx-auto"
+        />
+      </div>
+
+      <!-- Trust Indicators -->
+      <div class="border-t border-light-border-light dark:border-dark-border-light pt-8">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 text-sm text-light-text-secondary dark:text-dark-text-secondary">
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-success-green mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            No monthly fees, ever
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-success-green mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            Launch in 14 days
+          </div>
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-success-green mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            500 lifetime spots left
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</Section>
+
+<style>
+  /* FAQ accordion styling */
+  details[open] summary {
+    margin-bottom: 0.5rem;
+  }
+  
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  /* Smooth animations for FAQ expand/collapse */
+  details[open] div {
+    animation: fadeIn 0.2s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Enhanced focus states for accessibility */
+  details summary:focus-visible {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+</style>

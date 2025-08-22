@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import HeroSection from '../components/sections/HeroSection.astro';
 import ProblemSection from '../components/sections/ProblemSection.astro';
 import FeaturesSection from '../components/sections/FeaturesSection.astro';
+import FinalSections from '../components/sections/FinalSections.astro';
 ---
 
 <Layout 
@@ -12,13 +13,5 @@ import FeaturesSection from '../components/sections/FeaturesSection.astro';
 	<HeroSection />
 	<ProblemSection />
 	<FeaturesSection />
-	
-	<!-- Placeholder for additional sections -->
-	<div class="py-20 text-center bg-light-bg-secondary dark:bg-dark-bg-secondary">
-		<div class="container-responsive">
-			<p class="text-light-text-secondary dark:text-dark-text-secondary">
-				Social proof, urgency, FAQ, and footer sections coming next...
-			</p>
-		</div>
-	</div>
+	<FinalSections />
 </Layout>
