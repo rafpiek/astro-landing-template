@@ -24,6 +24,23 @@ export default {
         accent: {
           purple: '#8B5CF6',
           'purple-light': '#EDE9FE',
+          pink: '#EC4899',
+          'pink-light': '#FCE7F3',
+          teal: '#14B8A6',
+          'teal-light': '#CCFBF1',
+          indigo: '#6366F1',
+          'indigo-light': '#E0E7FF',
+        },
+        // Extended color palette
+        vibrant: {
+          coral: '#FF6B6B',
+          mint: '#4ECDC4', 
+          sky: '#45B7D1',
+          sage: '#96CEB4',
+          cream: '#FFEAA7',
+          lavender: '#DDA0DD',
+          peach: '#FFAB91',
+          ocean: '#006BA6',
         },
         // Light mode colors
         light: {
@@ -54,10 +71,14 @@ export default {
       // Typography from style guide
       fontFamily: {
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+        display: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
       },
       
       fontSize: {
         // Display - Hero headings
+        '8xl': ['6rem', { lineHeight: '1.1' }],     // 96px
+        '7xl': ['4.5rem', { lineHeight: '1.1' }],   // 72px
         '6xl': ['3.75rem', { lineHeight: '1.25' }], // 60px
         '5xl': ['3rem', { lineHeight: '1.25' }],    // 48px
         // Headings
@@ -78,6 +99,8 @@ export default {
         medium: 500,
         semibold: 600,
         bold: 700,
+        extrabold: 800,
+        black: 900,
       },
       
       // Spacing scale from style guide
@@ -115,6 +138,41 @@ export default {
         'light': '0 1px 3px rgba(0, 0, 0, 0.1)',
         'dark': '0 1px 3px rgba(0, 0, 0, 0.3)',
         'screenshot': '0 8px 32px rgba(0, 0, 0, 0.12)',
+        'glass': '0 8px 32px rgba(79, 129, 244, 0.15)',
+        'glow': '0 0 50px rgba(79, 129, 244, 0.25)',
+        'glow-coral': '0 0 50px rgba(255, 107, 107, 0.25)',
+        'glow-mint': '0 0 50px rgba(78, 205, 196, 0.25)',
+        'glow-purple': '0 0 50px rgba(139, 92, 246, 0.25)',
+        'glow-pink': '0 0 50px rgba(236, 72, 153, 0.25)',
+        'xl-glass': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(255, 255, 255, 0.1)',
+        'inner-glass': 'inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+        'rainbow': '0 0 60px rgba(255, 107, 107, 0.15), 0 0 60px rgba(78, 205, 196, 0.15), 0 0 60px rgba(69, 183, 209, 0.15)',
+      },
+      
+      // Modern gradients
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-glass': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
+        'gradient-hero': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        'gradient-premium': 'linear-gradient(135deg, #4F81F4 0%, #8B5CF6 50%, #F59E0B 100%)',
+        'gradient-vibrant': 'linear-gradient(45deg, #FF6B6B 0%, #4ECDC4 25%, #45B7D1 50%, #96CEB4 75%, #FFEAA7 100%)',
+        'gradient-sunset': 'linear-gradient(135deg, #FF9A9E 0%, #FECFEF 25%, #FECFEF 50%, #B7F8DB 75%, #50E3C2 100%)',
+        'gradient-ocean': 'linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%)',
+        'gradient-cosmic': 'linear-gradient(135deg, #8B5CF6 0%, #EC4899 25%, #EF4444 50%, #F59E0B 75%, #10B981 100%)',
+        'mesh-pattern': 'radial-gradient(circle at 25% 25%, #4F81F4 0%, transparent 50%), radial-gradient(circle at 75% 75%, #8B5CF6 0%, transparent 50%)',
+        'mesh-colorful': 'radial-gradient(circle at 20% 20%, #FF6B6B 0%, transparent 40%), radial-gradient(circle at 80% 80%, #4ECDC4 0%, transparent 40%), radial-gradient(circle at 40% 60%, #45B7D1 0%, transparent 40%)',
+      },
+      
+      // Backdrop blur
+      backdropBlur: {
+        xs: '2px',
+        sm: '4px',
+        md: '8px',
+        lg: '12px',
+        xl: '16px',
+        '2xl': '24px',
+        '3xl': '40px',
       },
       
       // Animations optimized for performance

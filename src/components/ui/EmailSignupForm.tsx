@@ -78,15 +78,13 @@ export default function EmailSignupForm({
     ? 'flex flex-col sm:flex-row gap-3 max-w-md'
     : 'space-y-4 max-w-md mx-auto';
 
-  const inputClasses = `w-full px-4 py-3 text-base border border-light-border-medium rounded-lg 
-    focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-transparent
-    placeholder-light-text-muted bg-light-bg-primary
-    dark:bg-dark-bg-secondary dark:border-dark-border-medium dark:text-dark-text-primary
-    dark:placeholder-dark-text-muted transition-colors duration-150`;
+  const inputClasses = `w-full px-4 py-3 text-base bg-gray-900 border border-gray-700 rounded
+    focus:outline-none focus:border-gray-500
+    placeholder-gray-400 text-white transition-colors
+    hover:border-gray-600`;
 
-  const buttonClasses = `btn-base bg-primary-blue text-white hover:bg-primary-blue-hover 
-    px-6 py-3 text-base font-medium whitespace-nowrap transition-all duration-150 
-    hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed
+  const buttonClasses = `btn-base bg-white text-black hover:bg-gray-100 px-6 py-3 text-base font-medium 
+    whitespace-nowrap transition-colors rounded disabled:opacity-50 disabled:cursor-not-allowed
     ${variant === 'inline' ? 'sm:w-auto' : 'w-full'}`;
 
   return (
@@ -107,7 +105,7 @@ export default function EmailSignupForm({
           aria-describedby={error ? "email-error" : undefined}
         />
         {error && (
-          <p id="email-error" className="mt-2 text-sm text-red-600 dark:text-red-400">
+          <p id="email-error" className="mt-2 text-sm text-red-400">
             {error}
           </p>
         )}

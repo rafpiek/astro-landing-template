@@ -1,5 +1,6 @@
 /* Critical CSS for performance - will be inlined */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 /* Base reset and critical styles */
 *,
@@ -33,7 +34,7 @@ html:not(.dark) body {
 html.dark body,
 html:not(.light) body {
   color: #FFFFFF;
-  background-color: #0A0A0A;
+  background-color: #000000;
 }
 
 /* Handle system preference but prioritize explicit class */
@@ -65,7 +66,7 @@ video {
   outline-offset: 2px;
 }
 
-/* Reduce motion for users who prefer it */
+/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -202,4 +203,10 @@ html {
 @keyframes loading {
   0% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+/* Minimal animations for subtle polish */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
