@@ -1,0 +1,36 @@
+---
+import Container from '../ui/Container.astro';
+---
+
+<!-- Simplified Footer for Legal Pages -->
+<footer class="py-16 bg-black border-t border-gray-800">
+  <Container>
+    <div class="text-center">
+      <!-- Logo -->
+      <div class="mb-8">
+        <span class="text-xl font-bold text-white">Zeyn</span>
+      </div>
+      
+      <!-- Links -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 mb-8">
+        <a href="/" class="text-gray-400 hover:text-white transition-colors">
+          Home
+        </a>
+        <a href="/terms" class="text-gray-400 hover:text-white transition-colors">
+          Terms of Use
+        </a>
+        <a href="/privacy" class="text-gray-400 hover:text-white transition-colors">
+          Privacy Policy
+        </a>
+        <a href="mailto:hello@zeyn.app" class="text-gray-400 hover:text-white transition-colors">
+          Contact
+        </a>
+      </div>
+      
+      <!-- Copyright -->
+      <p class="text-gray-500 text-sm">
+        © 2025 Zeyn. All rights reserved.
+      </p>
+    </div>
+  </Container>
+</footer>

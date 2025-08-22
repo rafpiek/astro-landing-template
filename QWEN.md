@@ -1,45 +1,68 @@
-# QWEN.md - Project Context for `zeyn-landing`
+# Zeyn Landing Page - Project Context
 
-This file provides context for Qwen Code about the `zeyn-landing` project located at `/Users/rafal/projects/editor/zeyn-landing`. This is an Astro-based static website project.
+This is an Astro-based static website for the landing page of "Zeyn", a writing application targeted at novelists. The site is built with performance and modern web practices in mind.
 
 ## Project Overview
 
-*   **Name:** zeyn-landing
-*   **Type:** Static Website / Landing Page
-*   **Framework:** Astro v5.13.2
-*   **Language:** JavaScript/TypeScript (ECMAScript Modules)
-*   **Package Manager:** Bun
-*   **Description:** This is a basic Astro project, likely serving as a landing page. It uses Astro's component-based architecture with `.astro` files for pages, layouts, and components. The initial structure includes a welcome page.
+- **Framework**: [Astro](https://astro.build/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Components**: Mix of Astro components (`.astro`) and React components (`.tsx`)
+- **Deployment Target**: Static site generation (SSG)
+
+The landing page is designed to be a high-converting page for the Zeyn writing app launch. It emphasizes a clean, distraction-free aesthetic with a dark theme, consistent with the app's focus.
+
+## Key Technologies & Configurations
+
+1.  **Astro (`astro.config.mjs`)**:
+    *   Uses the `@astrojs/react` integration for React components.
+    *   Uses the `@astrojs/tailwind` integration for styling.
+    *   Configured for static site generation (`output: 'static'`).
+    *   Enables HTML compression (`compressHTML: true`).
+    *   Configures prefetching for better navigation (`prefetch`).
+    *   Sets the site URL to `https://zeyn.app`.
+
+2.  **Tailwind CSS (`tailwind.config.js`)**:
+    *   Extensively customized theme with a specific color palette, typography, spacing, shadows, and gradients tailored for the Zeyn brand.
+    *   Includes custom colors (primary blues, success greens, accent purples/pinks/teals, light/dark mode variants), font sizes, font weights, border radii, and box shadows.
+    *   Defines custom gradients for visual appeal.
+    *   Includes a plugin for `prefers-reduced-motion` support.
+
+3.  **Package Management**: Uses `bun` as the package manager and runtime.
 
 ## Project Structure
 
-The project follows the standard Astro directory layout:
+Based on the standard Astro structure and files observed:
 
-*   `src/`: Contains the source code.
-    *   `assets/`: Static assets like images (e.g., `astro.svg`, `background.svg`).
-    *   `components/`: Reusable Astro components (e.g., `Welcome.astro`).
-    *   `layouts/`: Layout components that wrap pages (e.g., `Layout.astro`).
-    *   `pages/`: Page components that define routes (e.g., `index.astro` for the root route).
-*   `public/`: Contains static files served directly (e.g., `favicon.svg`).
-*   `package.json`: Defines project metadata, dependencies, and scripts.
-*   `astro.config.mjs`: Astro configuration file.
-*   `README.md`: Basic setup and command instructions.
+```
+/
+├── public/                 # Static assets
+├── src/
+│   ├── assets/             # Images, optimized via Astro
+│   ├── components/         # UI components (Astro and React)
+│   │   ├── sections/       # Page section components
+│   │   └── ui/             # Reusable UI components (buttons, forms, etc.)
+│   ├── layouts/            # Page layout components
+│   └── pages/              # Page routes (Astro files)
+├── astro.config.mjs        # Astro configuration
+├── tailwind.config.js      # Tailwind CSS configuration
+├── package.json            # Project dependencies and scripts
+└── README.md               # Project README
+```
 
 ## Building and Running
 
-These are the standard commands for working with this Astro project, as defined in `package.json`:
+All commands are run from the project's root directory using `bun`:
 
-*   **Install Dependencies:** `bun install`
-*   **Development Server:** `bun dev` (Starts a local dev server, typically at `localhost:4321`)
-*   **Build for Production:** `bun build` (Builds the static site into the `./dist/` directory)
-*   **Preview Build:** `bun preview` (Previews the built site locally)
-*   **Astro CLI:** `bun astro ...` (Runs Astro CLI commands like `astro add`, `astro check`)
-*   **Help:** `bun astro -- --help`
+| Command                | Action                                           |
+| ---------------------- | ------------------------------------------------ |
+| `bun install`          | Installs project dependencies                    |
+| `bun dev`              | Starts the local development server at `localhost:4321` |
+| `bun build`            | Builds the production site to the `./dist/` directory |
+| `bun preview`          | Previews the built site locally before deployment |
 
 ## Development Conventions
 
-*   **Framework:** Astro is used for static site generation. Components are written in `.astro` files, which can contain HTML, CSS (within `<style>` tags), and JavaScript/TypeScript (within frontmatter `---` blocks or client-side `<script>` tags).
-*   **Routing:** File-based routing is used. Files in `src/pages/` correspond to website routes.
-*   **Layouts:** Layouts in `src/layouts/` are used to provide a common structure for pages.
-*   **Styling:** CSS is typically written within `<style>` tags inside `.astro` component files, often using Astro's scoped styling features or global styles as needed.
-*   **Assets:** Static assets are placed in `src/assets/` for processing or `public/` for direct serving.
+- **Component Structure**: Components are organized by type (UI elements vs. page sections) and technology (`.astro` for mostly static/markup, `.tsx` for interactive React).
+- **Styling**: Primarily uses Tailwind CSS utility classes directly in component markup. Custom theme values are defined in `tailwind.config.js`.
+- **Images**: Images are imported and optimized using Astro's `Image` component from `astro:assets`.
+- **Performance**: The Astro config includes settings for inlining critical CSS, prefetching, and HTML compression to optimize for performance.
