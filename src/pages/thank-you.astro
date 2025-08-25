@@ -194,18 +194,17 @@ import LegalFooter from '../components/sections/LegalFooter.astro';
 			e.preventDefault();
 			
 			// Get form data
-			const formData = new FormData(form);
 			const data = {
-				novelAbout: document.getElementById('novel-about')?.value,
-				switchReason: document.getElementById('switch-reason')?.value,
-				featureRequest: document.getElementById('feature-request')?.value
+				novelAbout: (document.getElementById('novel-about') as HTMLTextAreaElement)?.value,
+				switchReason: (document.getElementById('switch-reason') as HTMLTextAreaElement)?.value,
+				featureRequest: (document.getElementById('feature-request') as HTMLTextAreaElement)?.value
 			};
 			
 			// TODO: Send to analytics/backend
 			console.log('Research data:', data);
 			
 			// Show success message
-			const button = form.querySelector('button[type="submit"]');
+			const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
 			if (button) {
 				button.textContent = 'Thanks! 🙏';
 				button.disabled = true;

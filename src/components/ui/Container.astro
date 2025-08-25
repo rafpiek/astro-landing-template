@@ -12,9 +12,9 @@ const {
   as: Tag = 'div',
   padding = true,
   ...props 
-} = Astro.props;
+} = Astro.props as Props;
 
-const maxWidthClasses = {
+const maxWidthClasses: Record<NonNullable<Props['maxWidth']>, string> = {
   sm: 'max-w-container-sm',
   md: 'max-w-container-md', 
   lg: 'max-w-container-lg',

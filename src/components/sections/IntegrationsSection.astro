@@ -1,0 +1,259 @@
+---
+import Container from '../ui/Container.astro';
+---
+
+<section id="integrations" class="py-16 bg-gray-50 dark:bg-gray-900">
+  <Container>
+    
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-medium text-gray-900 dark:text-white mb-6">
+        Works with your tools
+      </h2>
+      
+      <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        Seamlessly integrate with the platforms and services you already use.
+      </p>
+    </div>
+
+    <!-- Integration Categories -->
+    <div class="space-y-16">
+      
+      <!-- Export & Publishing -->
+      <div>
+        <h3 class="text-2xl font-semibold text-gray-900 dark:text-white text-center mb-8">
+          Export & Publishing
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+          
+          <!-- Word -->
+          <div class="group flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-300">
+            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M5.41 21L6.12 17h2.88L9.5 19h4L8.75 3H5.25L1.5 19h4L5.41 21zM21.5 3v18h-8v-2h6V5h-6V3h8z"/>
+              </svg>
+            </div>
+            <div class="text-sm font-medium text-gray-900 dark:text-white text-center">Microsoft Word</div>
+          </div>
+
+          <!-- PDF -->
+          <div class="group flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-300">
+            <div class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-red-600 dark:text-red-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm-5-2H10V8.5h1.5V9.5zM15 10.5h-1.5V8.5H15V10.5z"/>
+              </svg>
+            </div>
+            <div class="text-sm font-medium text-gray-900 dark:text-white text-center">PDF Export</div>
+          </div>
+
+          <!-- EPUB -->
+          <div class="group flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-300">
+            <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2v-7h2v7zm4 0h-2v-7h2v7z"/>
+              </svg>
+            </div>
+            <div class="text-sm font-medium text-gray-900 dark:text-white text-center">EPUB</div>
+          </div>
+
+          <!-- Kindle -->
+          <div class="group flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-300">
+            <div class="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-orange-600 dark:text-orange-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/>
+              </svg>
+            </div>
+            <div class="text-sm font-medium text-gray-900 dark:text-white text-center">Kindle Direct</div>
+          </div>
+
+          <!-- Markdown -->
+          <div class="group flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-300">
+            <div class="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-gray-600 dark:text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.269 19.385c-.13-.186-.202-.4-.202-.618 0-.326.126-.613.323-.822.194-.21.456-.319.747-.319.296 0 .567.109.756.319.197.209.323.496.323.822 0 .218-.072.432-.202.618l-4.645 6.58c-.172.242-.43.395-.715.395h-.506c-.285 0-.543-.153-.715-.395L12.78 18.93c-.13-.186-.202-.4-.202-.618 0-.326.126-.613.323-.822.194-.21.456-.319.747-.319.296 0 .567.109.756.319.197.209.323.496.323.822 0 .218-.072.432-.202.618l2.829 4.01 2.829-4.01z"/>
+              </svg>
+            </div>
+            <div class="text-sm font-medium text-gray-900 dark:text-white text-center">Markdown</div>
+          </div>
+
+          <!-- LaTeX -->
+          <div class="group flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-300">
+            <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M2 17h20v2H2zm1.15-4.05L4 11l.85 1.95L6.8 12l-1.95.85L4 15l-.85-1.95L1.2 12l1.95-.85zM9.85 12.95L10.7 14l.85-1.95L13.5 11l-1.95-.85L10.7 8l-.85 1.95L7.9 11l1.95 1.95zM19 8l1.25 2.75L23 12l-2.75 1.25L19 16l-1.25-2.75L15 12l2.75-1.25L19 8z"/>
+              </svg>
+            </div>
+            <div class="text-sm font-medium text-gray-900 dark:text-white text-center">LaTeX</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Cloud Storage -->
+      <div>
+        <h3 class="text-2xl font-semibold text-gray-900 dark:text-white text-center mb-8">
+          Cloud Storage & Backup
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center max-w-3xl mx-auto">
+          
+          <!-- Google Drive -->
+          <div class="group flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-300">
+            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.28 11L4 15h16l2.28-4H6.28zM7.5 5L9.5 1h5l2 4-2 4h-5L7.5 5zM3.9 12l1.6 3h13l-1.6-3H3.9z"/>
+              </svg>
+            </div>
+            <div class="text-sm font-medium text-gray-900 dark:text-white text-center">Google Drive</div>
+          </div>
+
+          <!-- Dropbox -->
+          <div class="group flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-300">
+            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7.71 3.5L1.13 9l6.58 5.5h8.58L22.87 9l-6.58-5.5H7.71zM6.25 10.5L3.75 8h5L6.25 10.5zM12 8h5l-2.5 2.5L12 8zM8.75 13.5L6.25 11h5L8.75 13.5zM15.25 13.5L12.75 11h5L15.25 13.5z"/>
+              </svg>
+            </div>
+            <div class="text-sm font-medium text-gray-900 dark:text-white text-center">Dropbox</div>
+          </div>
+
+          <!-- OneDrive -->
+          <div class="group flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-300">
+            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.97 8c-.46-2.37-2.54-4.15-5.02-4.15-2.03 0-3.93 1.19-4.75 3.03C7.04 6.14 5 8.58 5 11.5 5 14.19 7.31 16.5 10 16.5h8.5c2.21 0 4-1.79 4-4 0-1.86-1.28-3.41-3-3.86-.18-.02-.37-.14-.53-.64z"/>
+              </svg>
+            </div>
+            <div class="text-sm font-medium text-gray-900 dark:text-white text-center">OneDrive</div>
+          </div>
+
+          <!-- iCloud -->
+          <div class="group flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-300">
+            <div class="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-gray-600 dark:text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.97 8c-.46-2.37-2.54-4.15-5.02-4.15-2.03 0-3.93 1.19-4.75 3.03C7.04 6.14 5 8.58 5 11.5 5 14.19 7.31 16.5 10 16.5h8.5c2.21 0 4-1.79 4-4 0-1.86-1.28-3.41-3-3.86-.18-.02-.37-.14-.53-.64z"/>
+              </svg>
+            </div>
+            <div class="text-sm font-medium text-gray-900 dark:text-white text-center">iCloud</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Writing Communities -->
+      <div>
+        <h3 class="text-2xl font-semibold text-gray-900 dark:text-white text-center mb-8">
+          Writing Communities
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 items-center max-w-2xl mx-auto">
+          
+          <!-- Critique Circle -->
+          <div class="group flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-300">
+            <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+              </svg>
+            </div>
+            <div class="text-sm font-medium text-gray-900 dark:text-white text-center">Critique Circle</div>
+          </div>
+
+          <!-- Scribophile -->
+          <div class="group flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-300">
+            <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+              </svg>
+            </div>
+            <div class="text-sm font-medium text-gray-900 dark:text-white text-center">Scribophile</div>
+          </div>
+
+          <!-- WriteOn -->
+          <div class="group flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-md transition-all duration-300">
+            <div class="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-orange-600 dark:text-orange-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+              </svg>
+            </div>
+            <div class="text-sm font-medium text-gray-900 dark:text-white text-center">WriteOn</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Integration Features -->
+    <div class="mt-16 bg-white dark:bg-gray-800 rounded-lg p-8 border border-gray-200 dark:border-gray-700">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Feature 1 -->
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0">
+            <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"/>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">One-Click Export</h4>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">
+              Export your manuscript to any format with custom styling and formatting options.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0">
+            <div class="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Auto-Sync</h4>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">
+              Keep your work synchronized across all devices and cloud storage platforms.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0">
+            <div class="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Secure Sharing</h4>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">
+              Share drafts securely with beta readers, editors, and writing communities.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center mt-16">
+      <h3 class="text-3xl font-medium text-gray-900 dark:text-white mb-4">
+        Ready to connect your workflow?
+      </h3>
+      <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+        Import your existing work and start writing with all your favorite tools integrated.
+      </p>
+      <a href="#hero" class="inline-flex items-center px-8 py-3 bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium rounded-lg">
+        Start free trial
+        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+        </svg>
+      </a>
+    </div>
+
+  </Container>
+</section>

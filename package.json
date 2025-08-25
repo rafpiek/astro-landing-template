@@ -1,7 +1,11 @@
 {
-  "name": "zeyn-landing",
+  "name": "astro-landing-template",
+  "description": "A comprehensive, reusable Astro landing page template with React components, Tailwind CSS, and multiple page examples. Inspired by Linear, Notion, and Tesla design principles.",
+  "version": "1.0.0",
   "type": "module",
-  "version": "0.0.1",
+  "keywords": ["astro", "landing-page", "template", "react", "tailwindcss", "typescript", "responsive", "dark-mode"],
+  "author": "Rafal",
+  "license": "MIT",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -9,12 +13,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.4",
     "@astrojs/react": "^4.3.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "astro": "^5.13.2",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "typescript": "^5.9.2"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is an Astro-based landing page for Zeyn (a writing application) using React components and Tailwind CSS. The project uses bun as the package manager and follows Astro's file-based routing system.
+This is a comprehensive Astro-based landing page template using React components and Tailwind CSS. The template includes the original Zeyn landing page as a showcase example, plus additional sections, pages, and components that can be customized for any product or service. The project uses bun as the package manager and follows Astro's file-based routing system.
 
 ## Development Commands
 

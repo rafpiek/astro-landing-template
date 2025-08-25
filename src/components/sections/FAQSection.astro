@@ -1,0 +1,273 @@
+---
+import Container from '../ui/Container.astro';
+---
+
+<section id="faq" class="py-16 bg-gray-50 dark:bg-gray-900">
+  <Container>
+    
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-medium text-gray-900 dark:text-white mb-6">
+        Frequently asked questions
+      </h2>
+      
+      <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        Everything you need to know about Zeyn. Can't find the answer you're looking for? 
+        <a href="/contact" class="text-blue-600 dark:text-blue-400 hover:underline">Reach out to our team</a>.
+      </p>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="max-w-3xl mx-auto">
+      <div class="space-y-4">
+        
+        <!-- FAQ Item 1 -->
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+          <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors" 
+                  onclick="toggleFAQ('faq1')">
+            <span class="text-lg font-medium text-gray-900 dark:text-white">
+              How is Zeyn different from Microsoft Word or Google Docs?
+            </span>
+            <svg id="faq1-icon" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="faq1" class="hidden px-6 pb-4">
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Unlike traditional word processors that are designed for documents, Zeyn is built specifically for novel writing. 
+              We focus on distraction-free writing with features like zen mode, chapter organization, progress tracking, and 
+              goal setting. You won't find unnecessary formatting options or business document features—just the tools you 
+              need to write your story.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+          <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors" 
+                  onclick="toggleFAQ('faq2')">
+            <span class="text-lg font-medium text-gray-900 dark:text-white">
+              Can I import my existing manuscript from Word or other apps?
+            </span>
+            <svg id="faq2-icon" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="faq2" class="hidden px-6 pb-4">
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Yes! Zeyn supports importing from Word (.docx), Google Docs, plain text (.txt), and Markdown (.md) files. 
+              Simply drag and drop your files or use the import function. The app will intelligently break your content 
+              into chapters if it detects chapter headings, or you can organize it manually after import.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+          <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors" 
+                  onclick="toggleFAQ('faq3')">
+            <span class="text-lg font-medium text-gray-900 dark:text-white">
+              Is my data safe? What happens if I lose internet connection?
+            </span>
+            <svg id="faq3-icon" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="faq3" class="hidden px-6 pb-4">
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Your data is automatically saved locally on your device every few seconds, so you never lose work even without 
+              internet. With a Professional or Team subscription, your projects are also continuously synced to the cloud with 
+              enterprise-grade encryption. We use the same security standards as banks, and you can export your data at any time.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+          <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors" 
+                  onclick="toggleFAQ('faq4')">
+            <span class="text-lg font-medium text-gray-900 dark:text-white">
+              Can I use Zeyn offline?
+            </span>
+            <svg id="faq4-icon" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="faq4" class="hidden px-6 pb-4">
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Absolutely! Zeyn works completely offline. All your writing, editing, and organization features are available 
+              without an internet connection. Your work is saved locally, and when you reconnect, any cloud sync (if you have 
+              a paid plan) will automatically update your backup.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+          <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors" 
+                  onclick="toggleFAQ('faq5')">
+            <span class="text-lg font-medium text-gray-900 dark:text-white">
+              What export formats are supported?
+            </span>
+            <svg id="faq5-icon" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="faq5" class="hidden px-6 pb-4">
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              All plans support PDF and Word (.docx) export. Professional and Team plans also include EPUB for ebook publishing, 
+              Markdown, HTML, and plain text. You can export individual chapters, selected scenes, or your entire manuscript 
+              with custom formatting options for different publishing requirements.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+          <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors" 
+                  onclick="toggleFAQ('faq6')">
+            <span class="text-lg font-medium text-gray-900 dark:text-white">
+              Is there a mobile app?
+            </span>
+            <svg id="faq6-icon" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="faq6" class="hidden px-6 pb-4">
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Yes! Zeyn is available on iOS, Android, Windows, macOS, and Linux. The web version works on any device with a 
+              modern browser. All versions sync seamlessly with your paid plan, so you can write on your laptop at home 
+              and continue on your phone during your commute.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 7 -->
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+          <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors" 
+                  onclick="toggleFAQ('faq7')">
+            <span class="text-lg font-medium text-gray-900 dark:text-white">
+              How does the goal tracking feature work?
+            </span>
+            <svg id="faq7-icon" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="faq7" class="hidden px-6 pb-4">
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              Set daily word count goals, track writing streaks, and celebrate milestones. Zeyn shows your progress with 
+              beautiful charts and gives you encouraging notifications when you hit targets. You can set different goals 
+              for weekdays vs weekends, and the app learns your writing patterns to give personalized recommendations.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 8 -->
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+          <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors" 
+                  onclick="toggleFAQ('faq8')">
+            <span class="text-lg font-medium text-gray-900 dark:text-white">
+              Can I collaborate with other writers or editors?
+            </span>
+            <svg id="faq8-icon" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="faq8" class="hidden px-6 pb-4">
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              The Team plan includes real-time collaboration features. Invite up to 5 collaborators per project. They can 
+              leave comments, suggest edits, and work on different chapters simultaneously. You maintain full control over 
+              who can view or edit each project, and there's a complete revision history so you never lose previous versions.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 9 -->
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+          <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors" 
+                  onclick="toggleFAQ('faq9')">
+            <span class="text-lg font-medium text-gray-900 dark:text-white">
+              What happens if I want to cancel my subscription?
+            </span>
+            <svg id="faq9-icon" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="faq9" class="hidden px-6 pb-4">
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              You can cancel anytime with no questions asked. Your account will remain active until the end of your billing 
+              period, then automatically switch to the free Starter plan. You keep all your projects and can export everything. 
+              If you change your mind, you can resubscribe and pick up exactly where you left off.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 10 -->
+        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+          <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors" 
+                  onclick="toggleFAQ('faq10')">
+            <span class="text-lg font-medium text-gray-900 dark:text-white">
+              Do you offer support for screenwriters or non-fiction authors?
+            </span>
+            <svg id="faq10-icon" class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="faq10" class="hidden px-6 pb-4">
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              While Zeyn is optimized for novel writing, many screenwriters and non-fiction authors love the distraction-free 
+              environment and organizational tools. We're working on specialized templates for screenplays and academic writing. 
+              If you have specific needs, let us know—we build features based on user feedback!
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Still have questions -->
+    <div class="text-center mt-12">
+      <h3 class="text-2xl font-medium text-gray-900 dark:text-white mb-4">
+        Still have questions?
+      </h3>
+      <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+        Our support team is here to help you succeed with your writing goals.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium rounded-lg">
+          Contact support
+          <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+        </a>
+        <a href="/help" class="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors font-medium rounded-lg">
+          Browse help docs
+        </a>
+      </div>
+    </div>
+
+  </Container>
+</section>
+
+<script>
+  declare global {
+    interface Window {
+      toggleFAQ: (id: string) => void;
+    }
+  }
+  
+  window.toggleFAQ = function(id: string) {
+    const faqContent = document.getElementById(id);
+    const faqIcon = document.getElementById(id + '-icon');
+    
+    if (faqContent && faqIcon) {
+      if (faqContent.classList.contains('hidden')) {
+        faqContent.classList.remove('hidden');
+        faqIcon.classList.add('rotate-180');
+      } else {
+        faqContent.classList.add('hidden');
+        faqIcon.classList.remove('rotate-180');
+      }
+    }
+  }
+</script>
