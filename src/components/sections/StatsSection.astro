@@ -16,131 +16,94 @@ import Container from '../ui/Container.astro';
       </p>
     </div>
 
-    <!-- Stats Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+    <!-- Stats Grid - Minimal design -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16 max-w-4xl mx-auto">
       
       <!-- Stat 1: Active Writers -->
-      <div class="text-center p-6 bg-gray-900 rounded-lg border border-gray-800 hover:bg-gray-800 transition-colors">
-        <div class="text-4xl lg:text-5xl font-bold text-blue-400 mb-2">
+      <div class="text-center">
+        <div class="text-4xl lg:text-5xl font-medium text-white mb-2">
           <span id="counter1">25,000</span>+
         </div>
-        <div class="text-gray-300 text-lg font-medium mb-2">Active Writers</div>
-        <p class="text-gray-500 text-sm">Authors actively writing with Zeyn</p>
+        <div class="text-gray-400 text-sm">Active Writers</div>
       </div>
 
       <!-- Stat 2: Words Written -->
-      <div class="text-center p-6 bg-gray-900 rounded-lg border border-gray-800 hover:bg-gray-800 transition-colors">
-        <div class="text-4xl lg:text-5xl font-bold text-green-400 mb-2">
+      <div class="text-center">
+        <div class="text-4xl lg:text-5xl font-medium text-white mb-2">
           <span id="counter2">15.2</span>M
         </div>
-        <div class="text-gray-300 text-lg font-medium mb-2">Words Written</div>
-        <p class="text-gray-500 text-sm">Total words crafted by our community</p>
+        <div class="text-gray-400 text-sm">Words Written</div>
       </div>
 
       <!-- Stat 3: Novels Completed -->
-      <div class="text-center p-6 bg-gray-900 rounded-lg border border-gray-800 hover:bg-gray-800 transition-colors">
-        <div class="text-4xl lg:text-5xl font-bold text-purple-400 mb-2">
+      <div class="text-center">
+        <div class="text-4xl lg:text-5xl font-medium text-white mb-2">
           <span id="counter3">1,250</span>+
         </div>
-        <div class="text-gray-300 text-lg font-medium mb-2">Novels Completed</div>
-        <p class="text-gray-500 text-sm">First drafts finished using Zeyn</p>
+        <div class="text-gray-400 text-sm">Novels Completed</div>
       </div>
 
       <!-- Stat 4: Daily Active Users -->
-      <div class="text-center p-6 bg-gray-900 rounded-lg border border-gray-800 hover:bg-gray-800 transition-colors">
-        <div class="text-4xl lg:text-5xl font-bold text-yellow-400 mb-2">
+      <div class="text-center">
+        <div class="text-4xl lg:text-5xl font-medium text-white mb-2">
           <span id="counter4">8,500</span>+
         </div>
-        <div class="text-gray-300 text-lg font-medium mb-2">Daily Writers</div>
-        <p class="text-gray-500 text-sm">Writers who log in every day</p>
+        <div class="text-gray-400 text-sm">Daily Writers</div>
       </div>
 
     </div>
 
-    <!-- Additional Stats Row -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+    <!-- Additional Simple Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-2xl mx-auto">
       
-      <!-- Stat 5: Average Session Time -->
-      <div class="text-center p-6">
-        <div class="text-3xl font-bold text-white mb-2">
+      <div class="text-center">
+        <div class="text-2xl font-medium text-white mb-2">
           <span id="counter5">42</span> min
         </div>
-        <div class="text-gray-400">Average writing session</div>
+        <div class="text-gray-400 text-sm">Average session</div>
       </div>
 
-      <!-- Stat 6: Writing Streaks -->
-      <div class="text-center p-6">
-        <div class="text-3xl font-bold text-white mb-2">
+      <div class="text-center">
+        <div class="text-2xl font-medium text-white mb-2">
           <span id="counter6">127</span> days
         </div>
-        <div class="text-gray-400">Longest writing streak</div>
+        <div class="text-gray-400 text-sm">Longest streak</div>
       </div>
 
-      <!-- Stat 7: Countries -->
-      <div class="text-center p-6">
-        <div class="text-3xl font-bold text-white mb-2">
-          <span id="counter7">89</span> countries
+      <div class="text-center">
+        <div class="text-2xl font-medium text-white mb-2">
+          <span id="counter7">89</span>
         </div>
-        <div class="text-gray-400">Writers worldwide</div>
+        <div class="text-gray-400 text-sm">Countries</div>
       </div>
 
     </div>
 
-    <!-- Success Stories Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Success Stories - Minimal -->
+    <div class="max-w-3xl mx-auto space-y-6">
       
-      <!-- Success Story 1 -->
-      <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-            🏆
-          </div>
-          <div class="ml-4">
-            <div class="text-white font-semibold">Best Seller</div>
-            <div class="text-gray-400 text-sm">Achievement unlocked</div>
-          </div>
-        </div>
-        <p class="text-gray-300 text-sm leading-relaxed">
+      <div class="text-center border-b border-gray-800 pb-6">
+        <p class="text-gray-400 leading-relaxed">
           "My novel reached #1 on Amazon in its category after I rewrote it completely in Zeyn. 
           The focused environment helped me find my voice."
         </p>
-        <div class="text-gray-500 text-xs mt-3">- Sarah M., Fantasy Author</div>
+        <div class="text-gray-500 text-sm mt-3">Sarah M., Fantasy Author</div>
       </div>
 
-      <!-- Success Story 2 -->
-      <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-            📚
-          </div>
-          <div class="ml-4">
-            <div class="text-white font-semibold">Publishing Deal</div>
-            <div class="text-gray-400 text-sm">Traditional publishing</div>
-          </div>
-        </div>
-        <p class="text-gray-300 text-sm leading-relaxed">
+      <div class="text-center border-b border-gray-800 pb-6">
+        <p class="text-gray-400 leading-relaxed">
           "Signed with a major publisher after finishing my manuscript in Zeyn. 
           The chapter organization made pitching so much easier."
         </p>
-        <div class="text-gray-500 text-xs mt-3">- Marcus C., Thriller Novelist</div>
+        <div class="text-gray-500 text-sm mt-3">Marcus C., Thriller Novelist</div>
       </div>
 
-      <!-- Success Story 3 -->
-      <div class="bg-gray-900 p-6 rounded-lg border border-gray-800">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-            ⚡
-          </div>
-          <div class="ml-4">
-            <div class="text-white font-semibold">Speed Record</div>
-            <div class="text-gray-400 text-sm">50K in 30 days</div>
-          </div>
-        </div>
-        <p class="text-gray-300 text-sm leading-relaxed">
+      <div class="text-center pb-6">
+        <p class="text-gray-400 leading-relaxed">
           "Wrote my entire first draft in 30 days using Zeyn's goal tracking. 
           The progress visualization kept me motivated every single day."
         </p>
-        <div class="text-gray-500 text-xs mt-3">- Elena R., Romance Author</div>
+        <div class="text-gray-500 text-sm mt-3">Elena R., Romance Author</div>
       </div>
 
     </div>
@@ -153,7 +116,7 @@ import Container from '../ui/Container.astro';
       <p class="text-lg text-gray-400 mb-8">
         Start your writing journey with thousands of successful authors.
       </p>
-      <a href="#hero" class="inline-flex items-center px-8 py-3 bg-white text-black hover:bg-gray-100 transition-colors font-medium rounded-lg">
+      <a href="#hero" class="inline-flex items-center px-8 py-3 bg-white text-black hover:bg-gray-100 transition-colors font-medium rounded">
         Start writing for free
         <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
