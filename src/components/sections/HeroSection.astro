@@ -4,6 +4,8 @@ import Container from '../ui/Container.astro';
 import EmailSignupForm from '../ui/EmailSignupForm.tsx';
 import TypewriterText from '../ui/TypewriterText.tsx';
 import CountdownTimer from '../ui/CountdownTimer.tsx';
+import { t, tArray } from '../../i18n/ui';
+import type { Locale } from '../../i18n/types';
 
 // Import hero images for optimization
 import zenModeDark from '../../assets/screenshots/dark-mode/dark-10-zen-mode.png';
@@ -11,6 +13,34 @@ import chaptersDark from '../../assets/screenshots/dark-mode/dark-05-chapters-ov
 import statsDark from '../../assets/screenshots/dark-mode/dark-07-stats-all-time.png';
 import homeDark from '../../assets/screenshots/dark-mode/dark-01-home-dashboard.png';
 import editorDark from '../../assets/screenshots/dark-mode/dark-08-document-editor.png';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+
+// Get all hero translations
+const badgeText = await t(locale, 'hero.badge');
+const countdownText = await t(locale, 'hero.countdown');
+const headline1 = await t(locale, 'hero.headline1');
+const typewriterWords = await tArray(locale, 'hero.typewriter');
+const subheadline = await t(locale, 'hero.subheadline');
+const joinedWriters = await t(locale, 'hero.joined_writers');
+const wordsWritten = await t(locale, 'hero.stats.words_written');
+const finishRate = await t(locale, 'hero.stats.finish_rate');
+const writerRating = await t(locale, 'hero.stats.writer_rating');
+const emailPlaceholder = await t(locale, 'hero.email_placeholder');
+const ctaButton = await t(locale, 'hero.cta_button');
+const lifetimeDeal = await t(locale, 'hero.lifetime_deal');
+const exclusiveOffer = await t(locale, 'hero.exclusive_offer');
+const writersCount = await t(locale, 'hero.writers_count');
+const writersWriting = await t(locale, 'hero.writers_writing');
+const fantasyGenre = await t(locale, 'hero.genres.fantasy');
+const romanceGenre = await t(locale, 'hero.genres.romance');
+const mysteryGenre = await t(locale, 'hero.genres.mystery');
+const literaryGenre = await t(locale, 'hero.genres.literary');
+const continueReading = await t(locale, 'hero.continue_reading');
 ---
 
 <section id="hero" class="relative min-h-screen bg-black overflow-hidden">
@@ -34,11 +64,11 @@ import editorDark from '../../assets/screenshots/dark-mode/dark-08-document-edit
             <div class="inline-flex items-center gap-2 px-3 py-1 mb-2 bg-gray-900 border border-gray-800 rounded-full">
               <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
               <span class="text-sm font-medium text-white">
-                Early Bird Access - Limited Spots
+                {badgeText}
               </span>
             </div>
             <div class="flex items-center gap-3 text-xs text-gray-500">
-              <span>Registration closes in:</span>
+              <span>{countdownText}</span>
               <CountdownTimer 
                 client:load
                 targetDate={new Date(Date.now() + 2 * 24 * 60 * 60 * 1000)}
@@ -50,11 +80,11 @@ import editorDark from '../../assets/screenshots/dark-mode/dark-08-document-edit
 
           <!-- Main Headline with Typewriter -->
           <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-4">
-            <span class="block">Finally finish your</span>
+            <span class="block">{headline1}</span>
             <span class="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
               <TypewriterText 
                 client:load
-                words={["novel", "memoir", "masterpiece", "bestseller"]}
+                words={typewriterWords}
                 className=""
                 speed={150}
                 deleteSpeed={100}
@@ -65,24 +95,22 @@ import editorDark from '../../assets/screenshots/dark-mode/dark-08-document-edit
 
           <!-- Subheadline with specific benefits -->
           <p class="text-xl text-gray-300 mb-4 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-            <span class="font-semibold text-white">Join 1,247 writers</span> who stopped starting over.
-            Write 3x faster with AI-powered focus mode, smart chapter management, 
-            and motivation that actually works.
+            <span class="font-semibold text-white">{joinedWriters}</span> {subheadline}
           </p>
 
           <!-- Social Proof Stats -->
           <div class="grid grid-cols-3 gap-4 mb-4 max-w-md mx-auto lg:mx-0">
             <div class="group text-center lg:text-left transition-all duration-300 hover:transform hover:scale-105">
               <div class="text-2xl font-bold text-white">2.3M+</div>
-              <div class="text-xs text-gray-500">words written</div>
+              <div class="text-xs text-gray-500">{wordsWritten}</div>
             </div>
             <div class="group text-center lg:text-left transition-all duration-300 hover:transform hover:scale-105">
               <div class="text-2xl font-bold text-white">92%</div>
-              <div class="text-xs text-gray-500">finish rate</div>
+              <div class="text-xs text-gray-500">{finishRate}</div>
             </div>
             <div class="group text-center lg:text-left transition-all duration-300 hover:transform hover:scale-105">
               <div class="text-2xl font-bold text-white">4.9★</div>
-              <div class="text-xs text-gray-500">writer rating</div>
+              <div class="text-xs text-gray-500">{writerRating}</div>
             </div>
           </div>
 
@@ -94,16 +122,16 @@ import editorDark from '../../assets/screenshots/dark-mode/dark-08-document-edit
                 <div class="relative">
                   <EmailSignupForm 
                     client:load
-                    placeholder="Enter your email"
-                    buttonText="Join early access →"
+                    placeholder={emailPlaceholder}
+                    buttonText={ctaButton}
                     variant="inline"
                     className=""
                   />
                 </div>
               </div>
               <div class="flex flex-col items-center lg:items-start">
-                <p class="text-sm font-semibold text-white">Lifetime deal for early birds</p>
-                <p class="text-xs text-gray-500">Be first to get exclusive offer</p>
+                <p class="text-sm font-semibold text-white">{lifetimeDeal}</p>
+                <p class="text-xs text-gray-500">{exclusiveOffer}</p>
               </div>
             </div>
           </div>
@@ -129,15 +157,15 @@ import editorDark from '../../assets/screenshots/dark-mode/dark-08-document-edit
                 </div>
               </div>
               <div class="text-sm">
-                <span class="text-white font-medium">1,247 writers</span>
-                <span class="text-gray-500"> already writing their masterpiece</span>
+                <span class="text-white font-medium">{writersCount}</span>
+                <span class="text-gray-500"> {writersWriting}</span>
               </div>
             </div>
             <div class="flex flex-wrap gap-2 text-xs">
-              <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded-full text-gray-400">📚 Fantasy & Sci-Fi</span>
-              <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded-full text-gray-400">💕 Romance</span>
-              <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded-full text-gray-400">🔍 Mystery & Thriller</span>
-              <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded-full text-gray-400">📖 Literary Fiction</span>
+              <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded-full text-gray-400">{fantasyGenre}</span>
+              <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded-full text-gray-400">{romanceGenre}</span>
+              <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded-full text-gray-400">{mysteryGenre}</span>
+              <span class="px-2 py-1 bg-gray-900 border border-gray-800 rounded-full text-gray-400">{literaryGenre}</span>
             </div>
           </div>
 
@@ -255,7 +283,7 @@ import editorDark from '../../assets/screenshots/dark-mode/dark-08-document-edit
   <!-- Scroll Indicator -->
   <div class="absolute bottom-16 left-1/2 -translate-x-1/2">
     <a href="#features" class="group flex flex-col items-center gap-2 hover:opacity-75 transition-opacity duration-200">
-      <span class="text-sm text-gray-500 font-medium whitespace-nowrap">Continue reading</span>
+      <span class="text-sm text-gray-500 font-medium whitespace-nowrap">{continueReading}</span>
       <svg class="w-5 h-5 text-gray-400 group-hover:animate-none animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
       </svg>

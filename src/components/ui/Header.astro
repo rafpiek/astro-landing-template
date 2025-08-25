@@ -1,5 +1,19 @@
 ---
 import Container from './Container.astro';
+import LanguageSwitcher from './LanguageSwitcher.tsx';
+import { t } from '../../i18n/ui';
+import type { Locale } from '../../i18n/types';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+
+// Get translations
+const featuresText = await t(locale, 'nav.features');
+const faqText = await t(locale, 'nav.faq'); 
+const ctaText = await t(locale, 'nav.cta');
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-lg">
@@ -14,24 +28,32 @@ import Container from './Container.astro';
       </a>
 
       <!-- Navigation & CTA -->
-      <div class="flex items-center gap-8">
+      <div class="flex items-center gap-4">
         
         <!-- Navigation Links -->
         <nav class="hidden md:flex items-center gap-8">
-          <a href="#features" class="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-200">
-            Features
+          <a href="#features" class="text-sm font-medium text-gray-400 hover:text-white transition-all duration-300 tracking-wide hover:tracking-wider">
+            {featuresText}
           </a>
-          <a href="#faq" class="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-200">
-            FAQ
+          <a href="#faq" class="text-sm font-medium text-gray-400 hover:text-white transition-all duration-300 tracking-wide hover:tracking-wider">
+            {faqText}
           </a>
         </nav>
+
+        <!-- Language Switcher -->
+        <LanguageSwitcher 
+          client:load
+          variant="toggle"
+          size="sm"
+          className="hidden sm:block"
+        />
 
         <!-- CTA Button -->
         <a 
           href="#hero" 
-          class="inline-flex items-center px-4 py-2 bg-white text-black hover:bg-gray-100 text-sm font-medium transition-colors duration-200 rounded-lg"
+          class="inline-flex items-center px-4 py-2 bg-white text-black hover:bg-gray-50 text-sm font-semibold transition-all duration-300 ease-out rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] backdrop-blur-sm"
         >
-          Get Early Access
+          {ctaText}
         </a>
 
       </div>

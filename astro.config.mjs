@@ -13,6 +13,15 @@ export default defineConfig({
     }),
   ],
   
+  // Internationalization configuration
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'pl'],
+    routing: {
+      prefixDefaultLocale: false // Clean URLs for English (default)
+    }
+  },
+  
   // Performance optimizations
   build: {
     inlineStylesheets: 'auto', // Inline critical CSS

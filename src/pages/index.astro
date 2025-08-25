@@ -12,22 +12,26 @@ import SecuritySection from '../components/sections/SecuritySection.astro';
 import PricingSection from '../components/sections/PricingSection.astro';
 import FAQSection from '../components/sections/FAQSection.astro';
 import FinalSections from '../components/sections/FinalSections.astro';
+
+// Get the locale - defaults to English for root pages
+const locale = 'en';
 ---
 
 <Layout 
 	title="Zeyn - Your novel deserves better than Word"
 	description="The only writing app built for novelists who want to finish their book—not fight their editor. Join 1000+ writers ditching Word for distraction-free writing. Launch in 14 days with lifetime deal."
+	locale={locale}
 >
-	<Header />
-	<HeroSection />
-	<ProblemSection />
-	<FeaturesSection />
-	<TestimonialsSection />
-	<StatsSection />
-	<TeamSection />
-	<IntegrationsSection />
-	<SecuritySection />
-	<PricingSection />
-	<FAQSection />
-	<FinalSections />
+	<Header locale={locale} />
+	<HeroSection locale={locale} />
+	<ProblemSection locale={locale} />
+	<FeaturesSection locale={locale} />
+	<TestimonialsSection locale={locale} />
+	<StatsSection locale={locale} />
+	<TeamSection locale={locale} />
+	<IntegrationsSection locale={locale} />
+	<SecuritySection locale={locale} />
+	<PricingSection locale={locale} />
+	<FAQSection locale={locale} />
+	<FinalSections locale={locale} />
 </Layout>

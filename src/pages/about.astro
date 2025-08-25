@@ -4,13 +4,17 @@ import Header from '../components/ui/Header.astro';
 import Container from '../components/ui/Container.astro';
 import TeamSection from '../components/sections/TeamSection.astro';
 import FinalSections from '../components/sections/FinalSections.astro';
+
+// Get the locale - defaults to English for root pages
+const locale = 'en';
 ---
 
 <Layout 
 	title="About Zeyn - Our Story | Writing App for Novelists"
 	description="Learn about Zeyn's mission to help novelists focus on their craft. Meet the team of writers and creators building the future of writing software."
+	locale={locale}
 >
-	<Header />
+	<Header locale={locale} />
 	
 	<!-- Hero Section -->
 	<section class="py-16 bg-gray-50 dark:bg-gray-900">
@@ -172,7 +176,7 @@ import FinalSections from '../components/sections/FinalSections.astro';
 	</section>
 
 	<!-- Team Section -->
-	<TeamSection />
+	<TeamSection locale={locale} />
 
 	<!-- Statistics Section -->
 	<section class="py-16 bg-white dark:bg-black">
@@ -297,5 +301,5 @@ import FinalSections from '../components/sections/FinalSections.astro';
 		</Container>
 	</section>
 
-	<FinalSections />
+	<FinalSections locale={locale} />
 </Layout>

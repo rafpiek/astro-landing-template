@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import type { Locale } from '../i18n/types';
 
 interface Props {
   title?: string;
@@ -7,6 +8,7 @@ interface Props {
   image?: string;
   canonical?: string;
   noindex?: boolean;
+  locale?: Locale;
 }
 
 const {
@@ -14,8 +16,13 @@ const {
   description = "The only writing app built for novelists who want to finish their book—not fight their editor. Join 1000+ writers ditching Word for distraction-free writing. Launch in 14 days with lifetime deal.",
   image = "/og-image.jpg",
   canonical,
-  noindex = false
+  noindex = false,
+  locale = 'en'
 } = Astro.props;
+
+// Set locale-specific values
+const htmlLang = locale === 'pl' ? 'pl' : 'en';
+const ogLocale = locale === 'pl' ? 'pl_PL' : 'en_US';
 
 const siteUrl = Astro.site || 'https://zeyn.app';
 const canonicalURL = canonical || new URL(Astro.url.pathname, siteUrl);
@@ -23,7 +30,7 @@ const imageURL = new URL(image, siteUrl);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={htmlLang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -78,7 +85,7 @@ const imageURL = new URL(image, siteUrl);
 		<meta property="og:image" content={imageURL} />
 		<meta property="og:image:alt" content="Zeyn writing app - distraction-free novel writing interface" />
 		<meta property="og:site_name" content="Zeyn" />
-		<meta property="og:locale" content="en_US" />
+		<meta property="og:locale" content={ogLocale} />
 		
 		<!-- Twitter Card -->
 		<meta name="twitter:card" content="summary_large_image" />
